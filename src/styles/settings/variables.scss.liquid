@@ -18,6 +18,14 @@ $color-error-bg: #000;
 $color-success: #000;
 $color-success-bg: #000;
 
+/*================ Color Natusan ================*/
+
+$white: #fff;
+$black: #000;
+$grey: #f3f3f3;
+$natusan-green: #004f3a;
+$natusan-blue: #92bfc5;
+
 /*================ Typography Variables ================*/
 $font-weight-normal: 400;
 $font-weight-bold: 700;
@@ -78,3 +86,129 @@ $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
 $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
+
+
+
+/*================ Media queries avalanche =============================*/
+
+    $thumb:            "screen and (max-width: 499px)";
+    $handheld:         "screen and (min-width: 500px) and (max-width: 800px)";
+    $handheld-and-up:  "screen and (min-width: 500px)";
+    $pocket:           "screen and (max-width: 800px)";
+    $lap:              "screen and (min-width: 801px) and (max-width: 1024px)";
+    $lap-and-up:       "screen and (min-width: 801px)";
+    $portable:         "screen and (max-width: 1124px)";
+    $desk:             "screen and (min-width: 1025px)";
+    $widescreen:       "screen and (min-width: 1160px)";
+    $superwide:        "screen and (min-width: 1500px)";
+    $wide:             "screen and (max-width: 1280px)";
+    $retina:           "screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx)";
+
+/*================ Typography Variables ================*/
+
+    $font-weight-normal: 400;
+    $font-weight-bold: 700;
+
+    $font-stack-header: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    $font-weight-header: $font-weight-bold;
+
+    $font-stack-body: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    $font-size-base: {{ settings.type_base_size }};
+
+    $font-size-text: 18px;
+    $font-size-heading: 32px;
+    $font-size-title: 24px;
+    $font-size-number: 50px;
+    $font-size-numer-mobile: 30px;
+    $font-size-mini: 10px;
+
+    $font-size-title-footer: 34px;
+    $font-size-title-footer-mobile: 26px;
+    $font-size-title-mobile: 40px;
+    $font-size-text-mobile: 16px;
+
+
+    /*====================================================*/
+    /*================ Natusan font sizes ================*/
+    /*====================================================*/
+
+    $font-size-h1: 60pt;
+    $font-size-h1-portable: 40pt;
+    $font-size-h1-pocket: 32pt;
+
+    @mixin h1{
+         font-family: 'DTLProkyonSTBold';
+         font-size: $font-size-h1;
+         line-height: 1.17;
+         letter-spacing: 0;
+         margin: 0
+    }
+
+    .natusan-h1{
+       @include h1;
+    }
+
+    @media screen and (max-width: 1124px) {
+         .natusan-h1{
+            font-size: $font-size-h1-portable;
+         }
+
+    }
+
+    @media screen and (max-width: 800px) {
+         .natusan-h1{
+            font-size: $font-size-h1-pocket;
+         }
+
+    }
+
+
+  /*================ Natusan h2 ================*/
+
+    $font-size-h2: 36pt;
+    $font-size-h2-mobile: 22px;
+
+    @mixin h2{
+         font-family: 'Palanquin-Bold';
+         font-size: $font-size-h2;
+         letter-spacing: 0;
+         line-height: 1.2;
+         margin: 0;
+    }
+
+    .natusan-h2{
+       @include h2;
+    }
+
+    @media screen and (max-width: 800px) {
+         .natusan-h2{
+            font-size: $font-size-h2-mobile;
+         }
+
+    }
+
+    /*================ Natusan h3 ================*/
+
+
+        $font-size-h3: 18px;
+        $font-size-h3-mobile: 16px;
+
+        @mixin h3{
+             font-family: 'Palanquin-Medium';
+             font-size: $font-size-h3;
+             color: $natusan-blue;
+             letter-spacing: 0;
+             line-height: 1.8;
+             margin: 0;
+        }
+
+        .natusan-h3{
+           @include h3;
+        }
+
+        @media screen and (max-width: 800px) {
+             .natusan-h3{
+                font-size: $font-size-h3-mobile;
+             }
+
+        }

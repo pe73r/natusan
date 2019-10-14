@@ -1,0 +1,65 @@
+@font-face {
+       font-family: 'DTLProkyonSTBold';
+       src:    url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/DTLProkyonSTBold.woff?123') format('woff'),
+               url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/DTLProkyonSTBold.woff2?123') format('woff2'),
+               url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/DTLProkyonSTBold.eot?123') format('eot');
+   }
+
+   @mixin dtl {
+     font-family: 'DTLProkyonSTBold';
+   }
+
+   .dtl{
+     @include dtl;
+   }
+
+
+////////    FONTS  //////////////////
+
+////////    Palanquin medium //////////////////
+@font-face {
+       font-family: 'Palanquin-Medium';
+       src:    url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Medium.woff?128') format('woff'),
+               url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Medium.woff2?128') format('woff2'),
+               url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Medium.eot?128') format('eot');
+   }
+
+   @mixin medium {
+     font-family: 'Palanquin-Medium';
+   }
+
+   .medium{
+     @include medium;
+   }
+
+   ///////////    Palanquin light //////////////////
+   @font-face {
+             font-family: 'Palanquin-Light';
+             src:    url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Light.woff?132') format('woff'),
+                     url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Light.woff2?132') format('woff2'),
+                     url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Light.eot?132') format('eot');
+   }
+
+      @mixin light{
+           font-family: 'Palanquin-Light';
+      }
+
+    .light{
+       @include light;
+    }
+
+    ///////////    Palanquin bold //////////////////
+    @font-face {
+              font-family: 'Palanquin-Bold';
+              src:    url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Bold.woff?136') format('woff'),
+                      url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Bold.woff2?136') format('woff2'),
+                      url('https://cdn.shopify.com/s/files/1/0246/3701/4082/files/Palanquin-Bold.eot?136') format('eot');
+    }
+
+       @mixin bold{
+            font-family: 'Palanquin-Bold';
+       }
+
+     .bold{
+        @include bold;
+     }

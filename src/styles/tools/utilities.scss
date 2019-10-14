@@ -1,0 +1,129 @@
+/// Utilities ////
+
+.full-width{
+  width: 100%;
+}
+
+.desktop-only{
+  display: block !important;
+}
+
+.mobile-only{
+  display: none !important;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.relative{
+   position: relative;
+}
+
+@media screen and (max-width: 800px) {
+    .desktop-only{
+      display: none !important;
+    }
+
+    .mobile-only{
+      display: block !important;
+    }
+}
+
+/// CONTAINERS //////
+
+.container--full{
+   width: 100%;
+   height: 100%;
+}
+
+.container--large{
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.container--medium{
+   width: 80%;
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+.container--small{
+   width: 90%;
+   max-width: 900px;
+   margin: 0 auto;
+}
+
+.container--primary{
+     background-color: $white;
+      .natusan-h2{
+         color: $natusan-green;
+      }
+}
+
+.container--secondary{
+   background-color: $grey;
+      .natusan-h3{
+         color: $natusan-blue;
+      }
+}
+
+.container--tertiary{
+  background-color: $natusan-green;
+      .natusan-h2{
+         color: $white;
+           strong{
+               color: $natusan-blue;
+           }
+      }
+      .natusan-h3{
+         color: $natusan-blue;
+      }
+}
+
+.container--quaternary{
+    background-color: $natusan-blue;
+      .button__primary{
+         &:hover{
+            color: $natusan-green;
+            background-color: $white;
+         }
+      }
+}
+
+@media #{$pocket}{
+
+      .container--large,
+      .container--medium{
+        width: 100%;
+      }
+
+      .container--small{
+        width: 90%;
+      }
+      .container--tertiary{
+        background-color: $natusan-green;
+            .natusan-h2{
+               color: $white;
+                 strong{
+                     color: $natusan-blue;
+                 }
+            }
+      }
+
+}
+
+
+/// BUTTONS //////
+
+.button__primary{
+  padding: 10px 40px;
+  background-color: $natusan-green;
+  text-decoration: none;
+  color:$white;
+  font-family: 'Palanquin-Medium';
+    &:hover{
+       background-color: $natusan-blue;
+    }
+}
