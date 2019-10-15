@@ -3,38 +3,38 @@
     - Based on CSS Wizardry grid
 ==============================================================================*/
 
-.grid {
-  @include clearfix();
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: -$grid-gutter;
-}
-
-.grid__item {
-  float: left;
-  padding-left: $grid-gutter;
-  width: 100%;
-
-  &[class*='--push'] {
-    position: relative;
-  }
-}
+// .grid {
+//   @include clearfix();
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   margin-left: -$grid-gutter;
+// }
+//
+// .grid__item {
+//   float: left;
+//   padding-left: $grid-gutter;
+//   width: 100%;
+//
+//   &[class*='--push'] {
+//     position: relative;
+//   }
+// }
 
 /*============================================================================
   Reversed grids allow you to structure your source in the opposite
   order to how your rendered layout will appear.
 ==============================================================================*/
-.grid--rev {
-  direction: rtl;
-  text-align: left;
-
-  > .grid__item {
-    direction: ltr;
-    text-align: left;
-    float: right;
-  }
-}
+// .grid--rev {
+//   direction: rtl;
+//   text-align: left;
+//
+//   > .grid__item {
+//     direction: ltr;
+//     text-align: left;
+//     float: right;
+//   }
+// }
 
 /*============================================================================
   Grid Columns

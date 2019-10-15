@@ -2,48 +2,66 @@
       <div class="container--primary">
             <div class="container--medium">
                 <div class="faqs__header">
-                     <h2 class="natusan-h2">{{ section.settings.title}}</h2>
+                    <div class="container--small">
+                        <h2 class="natusan-h2">{{ section.settings.title}}</h2>
+                     </div>
                 </div>
-                <div class="grid grid--xl grid--rev">
+                <div class="grid grid--xl grid--rev grid--middle">
                     <div class="5/12--lap-and-up grid__cell">
                          <div class="{% if section.settings.image-mobile %} desktop-only {% endif %}">
                            {% include 'image' with img : section.settings.image, class: 'full-width' %}
                          </div>
                          {% if section.settings.image-mobile != blank %}
-                            {% include 'image' with img : section.settings.image-mobile , class: 'full-width mobile-only' %}
+                           <div class="image-mobile__box">
+                               {% include 'image' with img : section.settings.image-mobile , class: 'full-width mobile-only' %}
+                          </div>
                          {% endif %}
                     </div>
                     <div class="7/12--lap-and-up grid__cell">
-                              <ul class="myNav">
-                                <li class="myNav-item">
-                                    <a class="myNav-link" href="#">Category 1</a>
-                                    <ul class="myNav-content">
-                                     <li><a href="#">Category 1-1</a></li>
-                                     <li><a href="#">Category 1-2</a></li>
-                                     <li><a href="#">Category 1-3</a></li>
-                                    </ul>
-                              </li>
-                              <li class="myNav-item">
-                                    <a class="myNav-link" href="#">Category 2</a>
-                                    <ul class="myNav-content">
-                                     <li><a href="#">Category 2-1</a></li>
-                                     <li><a href="#">Category 2-2</a></li>
-                                     <li><a href="#">Category 2-3</a></li>
-                                    </ul>
-                                </li>
-                        </ul>
+                          <div class="accordion_container">
+                                {% for block in section.blocks %}
+                                    <div class="accordion-main">
+                                          <div class="accordion_head medium"><h4>{{ block.settings.question }}</h4><span class="arrow-down"></span></div>
+                                          <div class="accordion_body medium" id="a1" style="display: none;">
+                                              <p>{{ block.settings.answer }}</p>
+                                          </div>
+                                    </div>
+                                {% endfor %}
+                           </div>
+                           {% if section.settings.url != blank and section.settings.link != blank %}
+                                <div class="faqs__button">
+                                     <a class="button__primary" href="{{ section.settings.url }}">{{ section.settings.link }}</a>
+                                </div>
+                           {% endif %}
                     </div>
-
                 </div>
             </div>
       </div>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/jquery.simpleAccordion.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
-	$(document).ready(function() {
-		$('.myNav').simpleAccordion();
-	}); 
+        $(document).ready(function() {
+              //toggle the component with class accordion_body
+              $(".accordion_head").click(function() {
+                    $(this).removeClass('coll-back');
+                    if ($('.accordion_body').is(':visible')) {
+                      $(".accordion_body").slideUp(600);
+
+                    }
+
+                    if($(this).next(".accordion_body").is(':visible')) {
+                      $(this).next(".accordion_body").slideUp(300);
+                      $(this).removeClass('active');
+
+
+                    }else {
+                      $(this).next(".accordion_body").slideDown(600);
+                      $(this).addClass('active');
+
+                }
+              });
+        });
 </script>
 
 {% schema %}

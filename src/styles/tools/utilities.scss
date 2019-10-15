@@ -84,6 +84,9 @@
 
 .container--quaternary{
     background-color: $natusan-blue;
+        .natusan-h3{
+           color: $white;
+        }
       .button__primary{
          &:hover{
             color: $natusan-green;

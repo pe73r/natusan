@@ -1,0 +1,55 @@
+.services__header{
+   text-align: center;
+   padding: 50px;
+}
+
+.services--container{
+   padding-bottom: 30px;
+}
+
+.services-box{
+   background-color: $white;
+   padding: 70px;
+   color: $natusan-green;
+   max-width: 400px;
+   float: right;
+}
+
+.services__number{
+   font-size: $font-size-number;
+   margin: 0;
+
+}
+
+.services__text{
+   font-size: $font-size-title;
+   max-width: 300px;
+}
+
+
+@media #{$pocket}{
+
+      .services__image-box{
+         width: 90%;
+         margin: 0 auto;
+      }
+
+      .services-box{
+         padding: 20px;
+         text-align: center;
+         float: none;
+         width: 80%;
+         margin: 0 auto;
+         margin-top: 30px;
+      }
+
+      .services__number{
+         font-size: $font-size-number-mobile;
+      }
+
+      .services__text{
+         font-size: $font-size-text;
+         max-width: 100%;
+      }
+
+}

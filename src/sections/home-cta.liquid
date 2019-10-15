@@ -1,0 +1,78 @@
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-cta">
+   <div class="container--quaternary">
+        <div class="container--large cta-container">
+            <div class="grid grid--large grid--middle grid--rev">
+                <div class="1/2--lap-and-up grid__cell">
+                      <h3 class="natusan-h3 medium align-center mobile-only">{{ section.settings.subtitle }}</h3>
+                      <img class="ull-width {% if section.settings.image-mobile != blank %} desktop-only {% endif %}" src="{{ section.settings.image | img_url: "master" }}" alt="image">
+                      {% if section.settings.image-mobile != blank %}
+                            {% include 'image' with img : section.settings.image-mobile, class: 'full-width mobile-only' %}
+                      {% endif %}
+                </div>
+                <div class="1/2--lap-and-up grid__cell">
+                  <div class="cta__content">
+                         <h3 class="natusan-h3 medium desktop-only">{{ section.settings.subtitle }}</h3>
+                         <h1 class="natusan-h1 medium">{{ section.settings.title }}</h1>
+                         <div class="cta__list medium">{{ section.settings.list }}</div>
+                         {% if section.settings.link != blank %}
+                             <div class="cta__button">
+                                  <a class="button__primary" href="{{ section.settings.url }}">{{ section.settings.link }}</a>
+                             </div>
+                         {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home-cta",
+  "settings": [
+         {
+           "type": "text",
+           "id": "subtitle",
+           "label": "subtitle",
+           "default": "OUR PRODUCT"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "title",
+           "default": "Natural litter"
+         },
+         {
+           "type": "richtext",
+           "id": "list",
+           "label": "list"
+         },
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "image"
+         },
+         {
+           "type": "image_picker",
+           "id": "image-mobile",
+           "label": "image mobile"
+         },
+         {
+           "type": "text",
+           "id": "link",
+           "label": "link"
+         },
+         {
+           "type": "url",
+           "id": "url",
+           "label": "url"
+         }
+  ],
+  "presets": [
+  		{
+  			"name": "Home cta",
+  			"category": "Homepage"
+  		}
+  	]
+}
+{% endschema %}

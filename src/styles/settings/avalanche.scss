@@ -6,7 +6,7 @@
 $gutter : 20px;
 $gutter-xsmall : 5px;
 $gutter-small : 10px;
-$gutter-large: 70px; 
+$gutter-large: 70px;
 $gutter-xlarge:100px;
 
 
@@ -32,6 +32,13 @@ $gutter-xlarge:100px;
   }
 }
 
+.grid--landing {
+  margin-left: -$gutter;
+  .grid__cell {
+    padding-left: $gutter;
+  }
+}
+
 @media screen and (max-width: 800px){
 
     .grid--custom {
@@ -51,6 +58,13 @@ $gutter-xlarge:100px;
       margin-left: -$gutter;
       .grid__cell {
         padding-left: $gutter;
+      }
+    }
+
+    .grid--landing {
+      margin-left: -$gutter-small;
+      .grid__cell {
+        padding-left: $gutter-small;
       }
     }
 

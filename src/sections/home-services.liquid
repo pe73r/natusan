@@ -1,0 +1,101 @@
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-services">
+      <div class="container--secondary">
+             <div class="services__header">
+                 <h3 class="natusan-h3">{{ section.settings.title }}</h3>
+             </div>
+             {% for block in section.blocks %}
+                   <div class="{% if block.settings.container == 'medium' %} container--medium {% else %} container--large {% endif %} services--container">
+                         <div class="grid grid--middle {% if block.settings.reverse %} grid--rev {% endif %} {% if block.settings.container == 'medium' %} grid--xl {% else %} grid--large {% endif %}">
+                                 <div class="1/2--lap-and-up grid__cell">
+                                        <div class="services__image-box">
+                                             {% include 'image' with img : block.settings.image, class: 'full-width' %}
+                                        </div>
+                                 </div>
+                                 <div class="1/2--lap-and-up grid__cell">
+                                      <div class="services-box">
+                                          <h3 class="services__number dtl">{{ block.settings.number }}</h3>
+                                          <div class="services__text bold">{{ block.settings.text }}</div>
+                                      </div>
+                                 </div>
+                         </div>
+                   </div>
+             {% endfor %}
+      </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Services",
+  "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "OUR SERVICE"
+        },
+        {
+          "type": "text",
+          "id": "link",
+          "label": "Link",
+          "default": "start now"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "url"
+        }
+  ],
+  "blocks": [
+    {
+      "type": "service_block",
+      "name": "Block Name",
+      "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "image"
+          },
+          {
+            "type": "text",
+            "id": "number",
+            "label": "number"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "text"
+          },
+          {
+             "type":      "select",
+             "id":        "container",
+             "label":     "container size",
+             "options": [
+               {
+                 "value": "large",
+                 "label": "large"
+               },
+               {
+                 "value": "medium",
+                 "label": "medium"
+               }
+             ],
+             "default":   "large",
+             "info":      "Size of container"
+          },
+          {
+            "type": "checkbox",
+            "id": "reverse",
+            "label": "block reverse",
+            "default": false
+          }
+      ]
+    }
+  ],
+  "presets": [
+  		{
+  			"name": "Home services",
+  			"category": "Homepage"
+  		}
+  	]
+}
+{% endschema %}

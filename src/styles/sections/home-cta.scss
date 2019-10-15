@@ -1,0 +1,46 @@
+.cta-container{
+   padding: 50px 0;
+
+     .natusan-h1{
+        color:$natusan-green;
+           span{
+              color:$white;
+           }
+     }
+}
+
+.cta__list{
+   margin: 10px 0 50px 0;
+    p{
+       font-size: $font-size-text;
+       color: $natusan-green; 
+         &::before{
+              content: "";
+              display: inline-block;
+              cursor: pointer;
+              margin-right: 10px;
+              background: url(https://cdn.shopify.com/s/files/1/0246/3701/4082/files/confirm.png?551) no-repeat;
+              width: 13px;
+              height: 13px;
+              background-size: cover;
+         }
+    }
+}
+
+@media #{$pocket}{
+
+    .cta__content{
+       width: 80%;
+       margin: 0 auto;
+    }
+
+    .cta__list{
+        p{
+          font-size: $font-size-text-mobile;
+        }
+    }
+
+    .cta__button{
+      text-align: center;
+    }
+}
