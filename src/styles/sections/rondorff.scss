@@ -1,4 +1,6 @@
-/////////////////*   three products  *///////////////
+
+/////////////////*   utilities  *///////////////
+
 
 @media #{$pocket}{
   .pocket--hide {
@@ -15,19 +17,34 @@
    position: relative;
 }
 
+.full-width{
+   width: 100%;
+}
+
 .container{
-   width: 90%;
-   max-width: 1400px;
+   width: 85%;
+   max-width: 1200px;
    margin: 0 auto;
+}
+
+.container-secondary{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.container-full{
+   width: 100%;
 }
 
 .custom__button-primary{
   width: 85%;
+  max-width: 350px;
   text-align: center;
   position: absolute;
-  bottom: 5%;
+  bottom: 7%;
   left: 50%;
-  transform: translate(-50%,-5%);
+  transform: translate(-50%,-7%);
   background-color: white;
   padding: 25px;
   opacity: 0;
@@ -41,27 +58,78 @@
      }
 }
 
-.product__image-box{
-  margin-bottom: 5px;
-  &:hover {
-    .custom__button-primary{
-      opacity: 1;
-       }
-     }
- }
-
  .custom__button-secondary{
-  margin-top: 30px;
-   a{
-     color: black;
-     text-decoration: none;
-    }
+  margin: 30px 0;
+     a{
+       color: black;
+       text-decoration: none;
+      }
  }
 
  @media #{$pocket}{
      .custom__button-mobile{
        opacity: 1;
-       padding: 20px;
+       padding: 15px 5px;
        width: 80%;
      }
+
+     .custom__button-secondary{
+      margin: 20px 0;
+    }
+
+    .container--mobile{
+      width: 85%;
+      margin: 0 auto;
+    }
+
  }
+/////////////////*   three products  *///////////////
+
+
+ .product__image-box{
+   margin-bottom: 5px;
+   &:hover {
+     .custom__button-primary{
+       opacity: 1;
+       cursor: pointer;
+        }
+      }
+  }
+
+
+ /////////////////*   one product centered  *///////////////
+
+.container-one-product{
+   margin-top: 50px;
+}
+
+.one-product__text{
+  margin-bottom: 80px;
+}
+
+@media #{$pocket}{
+  .container-one-product{
+     margin-top: 0;
+  }
+  .one-product__text {
+      margin-bottom: 35px;
+   }
+}
+
+ /////////////////*   two products  *///////////////
+
+  .container--background{
+     width: 100%;
+     padding: 80px;
+     background-size: cover;
+     background-repeat: no-repeat;
+  }
+
+  @media #{$pocket}{
+      .container--background{
+        padding: 60px 0;
+      }
+      .two-products__left{
+        margin-bottom: 60px;
+      }
+  }
