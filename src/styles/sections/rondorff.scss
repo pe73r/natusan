@@ -154,16 +154,18 @@
    /////////////////*   mosaic grid *///////////////
 
     .container--mosaic{
-      margin: 50px auto;
+      margin: 80px auto;
+
+       .custom__button-secondary{
+          margin: 10px 0;
+       }
+        .grid{
+             img{
+               margin-bottom: 20px;
+             }
+        }
     }
 
-    .container--mosaic{
-      .grid{
-           img{
-             margin-bottom: 20px;
-           }
-      }
-   }
    .mosaic--buttons{
        position: absolute;
        bottom: 10%;
@@ -194,6 +196,7 @@
            text-decoration: none;
         }
    }
+
 
    @media #{$portable}{
      .button--mosaic{
