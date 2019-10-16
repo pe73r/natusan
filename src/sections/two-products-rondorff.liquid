@@ -23,7 +23,7 @@
                      <div class="product__image-box two-products__left relative">
                        {% include 'image' with img : section.settings.image-left , class: 'full-width' %}
                        <div class="custom__button-primary custom__button-mobile">
-                           <a><span>{{ product_item_1.title }}</span>-<span>{{ product_item_1.price | money_without_trailing_zeros  }}</span></a>
+                           <a href="/products/{{ section.settings.product-1 }}"><span>{{ product_item_1.title }}</span>-<span>{{ product_item_1.price | money_without_trailing_zeros  }}</span></a>
                        </div>
                      </div>
                   </a>
@@ -34,7 +34,7 @@
                     <div class="product__image-box two-products__right relative">
                       {% include 'image' with img : section.settings.image-right , class: 'full-width' %}
                       <div class="custom__button-primary custom__button-mobile">
-                          <a><span>{{ product_item_1.title }}</span>-<span>{{ product_item_1.price | money_without_trailing_zeros  }}</span></a>
+                          <a href="/products/{{ section.settings.product-2 }}"><span>{{ product_item_1.title }}</span>-<span>{{ product_item_1.price | money_without_trailing_zeros  }}</span></a>
                       </div>
                     </div>
                  </a>

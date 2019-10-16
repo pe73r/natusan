@@ -15,7 +15,7 @@
                  {% include 'image' with img : section.settings.image-mobile , class: 'full-width lap-and-up--hide' %}
                {% endif %}
                <div class="custom__button-primary custom__button-mobile">
-                 <a>
+                 <a href="/products/{{ section.settings.product }}">
                    <span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span>
                  </a>
                </div>

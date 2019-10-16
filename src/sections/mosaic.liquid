@@ -1,0 +1,175 @@
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="mosaic">
+ <div class="{% if section.settings.hide-desktop %} lap-and-up--hide {% endif %}{% if section.settings.hide-mobile %} pocket--hide {% endif %}">
+  <div class="container">
+    <div class="container--mosaic">
+         <div class="grid">
+             <div class="9/12--lap-and-up grid__cell">
+               <div class="product__image-box relative">
+                    <div class="font-size">
+                      {% assign product_item-1 = all_products[section.settings.product-1] %}
+                        <a href="/products/{{ section.settings.product-1 }}">
+                          {% include 'image' with img : section.settings.image-1 , class: 'full-width' %}
+                       </a>
+                    </div>
+                    <div class="mosaic--buttons">
+                          <div class="button--mosaic">
+                              <a href="/products/{{ section.settings.product-1 }}">
+                                <span>{{ product_item-1.title }}</span>-<span>{{ product_item-1.price | money_without_trailing_zeros  }}</span>
+                              </a>
+                          </div>
+                        {% assign product_item-2 = all_products[section.settings.product-2] %}
+                          <div class="button--mosaic">
+                            <a href="/products/{{ section.settings.product-2 }}">
+                              <span>{{ product_item-2.title }}</span>-<span>{{ product_item-2.price | money_without_trailing_zeros  }}</span>
+                            </a>
+                         </div>
+                    </div>
+                </div>
+             </div>
+             <div class="3/12--lap-and-up 1/1--pocket grid__cell ">
+               <div class="grid">
+                  <div class="1/2--pocket grid__cell">
+                      {% assign product_item-3 = all_products[section.settings.product-3] %}
+                      <a href="/products/{{ section.settings.product-3 }}">
+                        {% include 'image' with img : section.settings.image-2 , class: 'full-width' %}
+                      </a>
+                  </div>
+                  <div class="1/2--pocket grid__cell">
+                      {% assign product_item-4 = all_products[section.settings.product-4] %}
+                      <a href="/products/{{ section.settings.product-4 }}">
+                        {% include 'image' with img : section.settings.image-3 , class: 'full-width' %}
+                      </a>
+                  </div>
+               </div>
+             </div>
+              <div class="3/12--lap-and-up 1/2--pocket grid__cell">
+                  {% assign product_item-5 = all_products[section.settings.product-5] %}
+                  <a href="/products/{{ section.settings.product-5 }}">
+                    {% include 'image' with img : section.settings.image-4 , class: 'full-width' %}
+                  </a>
+               </div>
+               <div class="3/12--lap-and-up 1/2--pocket grid__cell">
+                   {% assign product_item-6 = all_products[section.settings.product-6] %}
+                   <a href="/products/{{ section.settings.product-6 }}">
+                     {% include 'image' with img : section.settings.image-5 , class: 'full-width' %}
+                   </a>
+               </div>
+               <div class="3/12--lap-and-up 1/2--pocket grid__cell">
+                 {% assign product_item-7 = all_products[section.settings.product-7] %}
+                 <a href="/products/{{ section.settings.product-7 }}">
+                   {% include 'image' with img : section.settings.image-6 , class: 'full-width' %}
+                 </a>
+               </div>
+               <div class="3/12--lap-and-up 1/2--pocket grid__cell">
+                   {% assign product_item-8 = all_products[section.settings.product-8] %}
+                   <a href="/products/{{ section.settings.product-8 }}">
+                     {% include 'image' with img : section.settings.image-7 , class: 'full-width' %}
+                   </a>
+               </div>
+          </div>
+          {% if section.settings.link != blank %}
+             <div class="mobile-container">
+                <div class="custom__button-secondary">
+                  <a href="{{ section.settings.url }}">{{ section.settings.link }}&#8594;</a>
+                </div>
+            </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</section >
+{% schema %}
+{
+  "name": "Mosaic",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide-desktop",
+      "label": "hide desktop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide-mobile",
+      "label": "hide mobile",
+      "default": false
+    },
+    {
+      "type": "product",
+      "id": "product-1",
+      "label": "product 1"
+    },
+    {
+      "type": "product",
+      "id": "product-2",
+      "label": "product 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-1",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-3",
+      "label": "product 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-2",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-4",
+      "label": "product 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-3",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-5",
+      "label": "product 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-4",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-6",
+      "label": "product 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-5",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-7",
+      "label": "product 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-6",
+      "label": "image desktop"
+    },
+    {
+      "type": "product",
+      "id": "product-8",
+      "label": "product 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "image-7",
+      "label": "image desktop"
+    }
+
+  ]
+}
+{% endschema %}

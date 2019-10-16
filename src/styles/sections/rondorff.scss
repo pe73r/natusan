@@ -21,6 +21,10 @@
    width: 100%;
 }
 
+.font-size{
+  font-size: 0;
+}
+
 .container{
    width: 85%;
    max-width: 1200px;
@@ -56,6 +60,10 @@
      span:last-child{
         margin-left: 10px;
      }
+     a{
+       color: black;
+       text-decoration: none;
+     }
 }
 
  .custom__button-secondary{
@@ -87,15 +95,24 @@
 
 
  .product__image-box{
-   margin-bottom: 5px;
+
    &:hover {
      .custom__button-primary{
        opacity: 1;
+       z-index:10;
        cursor: pointer;
         }
-      }
-  }
 
+     .button--mosaic{
+        opacity: 1;
+        z-index:10;
+        cursor: pointer;
+      }
+
+      }
+
+
+  }
 
  /////////////////*   one product centered  *///////////////
 
@@ -133,3 +150,62 @@
         margin-bottom: 60px;
       }
   }
+
+   /////////////////*   mosaic grid *///////////////
+
+    .container--mosaic{
+      margin: 50px auto;
+    }
+
+    .container--mosaic{
+      .grid{
+           img{
+             margin-bottom: 20px;
+           }
+      }
+   }
+   .mosaic--buttons{
+       position: absolute;
+       bottom: 10%;
+       left: 50%;
+       width: 90%;
+       transform: translate(-50%, -10%);
+       margin: 0 auto;
+       display: flex;
+       justify-content: space-around;
+   }
+
+   .button--mosaic{
+     max-width: 350px;
+     text-align: center;
+     background-color: white;
+     padding: 20px 50px;
+     opacity: 0;
+     -webkit-transition: opacity .2s; /* Safari prior 6.1 */
+      transition: opacity .2s;
+        span:first-child{
+           margin-right: 10px;
+        }
+        span:last-child{
+           margin-left: 10px;
+        }
+        a{
+           color: black;
+           text-decoration: none;
+        }
+   }
+
+   @media #{$portable}{
+     .button--mosaic{
+       padding: 20px 20px;
+     }
+   }
+
+   @media #{$pocket}{
+       .column-flex{
+         flex-direction: row;
+       }
+       .button--mosaic{
+         display: none;
+       }
+    }

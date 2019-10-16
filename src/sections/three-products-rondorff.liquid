@@ -10,7 +10,7 @@
                   {% include 'image' with img : block.settings.image , class: 'full-width' %}
                 </a>
                 <div class="custom__button-primary {% if forloop.last %} custom__button-mobile {% endif %} ">
-                    <a><span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span></a>
+                    <a href="/products/{{ block.settings.product }}"><span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span></a>
                 </div>
             </div>
           </div>
