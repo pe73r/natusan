@@ -20,7 +20,7 @@
              <div class="product__image-box relative">
                {% assign product_item = all_products[section.settings.product] %}
                  {% include 'image' with img : section.settings.image , class: 'full-width' %}
-                 <div class="custom__button-primary {% if forloop.last %} custom__button-mobile {% endif %} ">
+                 <div class="custom__button-primary custom__button-mobile">
                     <a href="/products/{{ section.settings.product }}"><span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span></a>
                  </div>
             </div>

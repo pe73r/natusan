@@ -16,21 +16,25 @@
 <section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="video">
      <div class="container--full">
         <div class="container--flex">
-            <div class="video--side">
-               <div class="video--box">
+
+
+            <div class="block-video__video-side">
+               <div class="video__box">
                     <div class="video__content relative">
-                      <video id="video" {{ options_video }} {% if section.settings.poster %} poster="{{ section.settings.poster | img_url: 'master' }}" {% endif %} onclick="this.play();" >
-                        <source src="{{ section.settings.mp4_url }}" type="video/mp4">
-                        <source src="{{ section.settings.mp4_url }}" type="video/ogg">
-                        Your browser does not support HTML5 video.
-                      </video>
+                        <video id="video" {{ options_video }} {% if section.settings.poster %} poster="{{ section.settings.poster | img_url: 'master' }}" {% endif %} onclick="this.play();" >
+                          <source src="{{ section.settings.mp4_url }}" type="video/mp4">
+                          <source src="{{ section.settings.mp4_url }}" type="video/ogg">
+                          Your browser does not support HTML5 video.
+                        </video>
                       <div class="play__button" id="play_button">
                          <img id="play_image" class="play__image" src="https://cdn.shopify.com/s/files/1/0246/3701/4082/files/iconfinder_play-circle-outline_-2.png?1437" alt="play">
                       </div>
                     </div>
                </div>
             </div>
-            <div class="image--side">
+
+
+            <div class="block-video__image-side">
               <div class="product__image-box relative">
                 {% assign product_item = all_products[section.settings.product] %}
                 <div class="font-size-cero">

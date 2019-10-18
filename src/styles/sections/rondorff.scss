@@ -67,13 +67,13 @@ $gutter-small : 10px;
 
 .container{
    width: 85%;
-   max-width: 1200px;
+   max-width: 1100px;
    margin: 0 auto;
 }
 
 .container-secondary{
    width: 100%;
-   max-width: 1200px;
+   max-width: 1100px;
    margin: 0 auto;
 }
 
@@ -107,7 +107,7 @@ $gutter-small : 10px;
 }
 
  .custom__button-secondary{
-  margin: 30px 0;
+  margin: 40px 0;
      a{
        color: black;
        text-decoration: none;
@@ -122,7 +122,7 @@ $gutter-small : 10px;
      }
 
      .custom__button-secondary{
-      margin: 20px 0 35px 0;
+       margin: 20px 0 35px 0;
     }
 
     .container--mobile{
@@ -192,20 +192,18 @@ $gutter-small : 10px;
 
 
  .product__image-box{
+     &:hover {
+       .custom__button-primary{
+         opacity: 1;
+         z-index:10;
+         cursor: pointer;
+          }
 
-   &:hover {
-     .custom__button-primary{
-       opacity: 1;
-       z-index:10;
-       cursor: pointer;
-        }
-
-     .button--mosaic{
-        opacity: 1;
-        z-index:10;
-        cursor: pointer;
-      }
-
+       .button--mosaic{
+          opacity: 1;
+          z-index:10;
+          cursor: pointer;
+          }
       }
   }
 
@@ -219,7 +217,10 @@ $gutter-small : 10px;
  /////////////////*   one product centered  *///////////////
 
 .container-one-product{
-   margin-top: 50px;
+   margin-top: 70px;
+     .custom__button-secondary{
+        margin: 20px 0 60px 0;
+     }
 }
 
 .one-product__text{
@@ -229,6 +230,9 @@ $gutter-small : 10px;
 @media #{$pocket}{
   .container-one-product{
      margin-top: 0;
+     .custom__button-secondary{
+        margin: 20px 0 35px 0;
+     }
   }
   .one-product__text {
       margin: 30px 0;
@@ -299,7 +303,6 @@ $gutter-small : 10px;
         }
    }
 
-
    @media #{$portable}{
      .button--mosaic{
        padding: 20px 20px;
@@ -324,14 +327,14 @@ $gutter-small : 10px;
     }
 
 
-/////////////////*   video-2  *///////////////
+/////////////////*  video-2  *///////////////
 
 .container--flex{
      display: flex;
      justify-content: space-between;
 }
 
-.video--side{
+.block-video__video-side{
   flex: 1;
   width: 50%;
   background-color: #eae8e8;
@@ -339,14 +342,13 @@ $gutter-small : 10px;
 
 }
 
-.video--box{
-    width: 60%;
-    height: 50%;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translate(-50%, 0);
+.video__box{
+   width: 60%;
+   height: 50%;
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   top: 50%;
 }
 
 .video__content{
@@ -359,7 +361,7 @@ $gutter-small : 10px;
       }
 }
 
-.image--side{
+.block-video__image-side{
   flex: 1;
   width: 50%;
 }
@@ -384,20 +386,27 @@ $gutter-small : 10px;
   }
 
   .play__image{
-    opacity: .8; 
+    opacity: .8;
   }
 
 @media #{$pocket}{
-    .container--flex{
+
+
+   .container--flex{
       flex-direction: column;
-    }
-    .video--side{
-      width: 100%;
-      min-height: 400px;
-    }
+   }
 
-    .image--side{
-      width: 100%;
-    }
+   .video__box{
+      width: 70%;
+      height: 60%;
+   }
 
+  .block-video__video-side{
+    width: 100%;
+    min-height: 400px;
+   }
+
+   .block-video__image-side{
+     width: 100%;
+   }
 }
