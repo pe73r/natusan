@@ -2,10 +2,10 @@
  <div class="{% if section.settings.hide-desktop %} lap-and-up--hide {% endif %}{% if section.settings.hide-mobile %} pocket--hide {% endif %}">
   <div class="container">
     <div class="container--mosaic">
-         <div class="grid">
+         <div class="grid grid--mosaic">
              <div class="9/12--lap-and-up grid__cell">
                <div class="product__image-box relative">
-                    <div class="font-size">
+                    <div class="font-size-cero mosaic__first-img">
                       {% assign product_item-1 = all_products[section.settings.product-1] %}
                         <a href="/products/{{ section.settings.product-1 }}">
                           {% include 'image' with img : section.settings.image-1 , class: 'full-width' %}
@@ -27,43 +27,55 @@
                 </div>
              </div>
              <div class="3/12--lap-and-up 1/1--pocket grid__cell ">
-               <div class="grid">
-                  <div class="1/2--pocket grid__cell">
-                      {% assign product_item-3 = all_products[section.settings.product-3] %}
-                      <a href="/products/{{ section.settings.product-3 }}">
-                        {% include 'image' with img : section.settings.image-2 , class: 'full-width' %}
-                      </a>
-                  </div>
-                  <div class="1/2--pocket grid__cell">
-                      {% assign product_item-4 = all_products[section.settings.product-4] %}
-                      <a href="/products/{{ section.settings.product-4 }}">
-                        {% include 'image' with img : section.settings.image-3 , class: 'full-width' %}
-                      </a>
-                  </div>
-               </div>
+                 <div class="grid grid--mosaic">
+                    <div class="1/2--pocket grid__cell">
+                        {% assign product_item-3 = all_products[section.settings.product-3] %}
+                        <a href="/products/{{ section.settings.product-3 }}">
+                          <div class="font-size-cero">
+                              {% include 'image' with img : section.settings.image-2 , class: 'full-width' %}
+                          </div>
+                        </a>
+                    </div>
+                    <div class="1/2--pocket grid__cell">
+                        {% assign product_item-4 = all_products[section.settings.product-4] %}
+                        <a href="/products/{{ section.settings.product-4 }}">
+                          <div class="font-size-cero">
+                              {% include 'image' with img : section.settings.image-3 , class: 'full-width' %}
+                          </div>
+                        </a>
+                    </div>
+                 </div>
              </div>
               <div class="3/12--lap-and-up 1/2--pocket grid__cell">
                   {% assign product_item-5 = all_products[section.settings.product-5] %}
                   <a href="/products/{{ section.settings.product-5 }}">
-                    {% include 'image' with img : section.settings.image-4 , class: 'full-width' %}
+                    <div class="font-size-cero">
+                        {% include 'image' with img : section.settings.image-4 , class: 'full-width' %}
+                    </div>
                   </a>
                </div>
                <div class="3/12--lap-and-up 1/2--pocket grid__cell">
                    {% assign product_item-6 = all_products[section.settings.product-6] %}
                    <a href="/products/{{ section.settings.product-6 }}">
-                     {% include 'image' with img : section.settings.image-5 , class: 'full-width' %}
+                     <div class="font-size-cero">
+                         {% include 'image' with img : section.settings.image-5 , class: 'full-width' %}
+                     </div>
                    </a>
                </div>
                <div class="3/12--lap-and-up 1/2--pocket grid__cell">
                  {% assign product_item-7 = all_products[section.settings.product-7] %}
                  <a href="/products/{{ section.settings.product-7 }}">
-                   {% include 'image' with img : section.settings.image-6 , class: 'full-width' %}
+                   <div class="font-size-cero">
+                       {% include 'image' with img : section.settings.image-6 , class: 'full-width' %}
+                   </div>
                  </a>
                </div>
                <div class="3/12--lap-and-up 1/2--pocket grid__cell">
                    {% assign product_item-8 = all_products[section.settings.product-8] %}
                    <a href="/products/{{ section.settings.product-8 }}">
-                     {% include 'image' with img : section.settings.image-7 , class: 'full-width' %}
+                     <div class="font-size-cero">
+                         {% include 'image' with img : section.settings.image-7 , class: 'full-width' %}
+                     </div>
                    </a>
                </div>
           </div>

@@ -6,31 +6,31 @@
                  {%- case block.type -%}
                          {%- when 'image' -%}
                          <div class="relative">
-                              {% if block.settings.image == blank %}
+                            {% if block.settings.image == blank %}
                                    {% include 'placeholder' %}
-                              {% else %}
-                                  <img class="banner__full {% if block.settings.image-mobile != blank %} desktop-only {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="image">
-                                  {% if block.settings.image-mobile != blank %}
-                                           <img class="banner__full mobile-only" src="{{ block.settings.image-mobile | img_url: "master" }}" alt="image-mobile-natusan" >
-                                  {% endif %}
-                              {% endif %}
-                                  <div class="banner__text medium {% if block.settings.invert %} text-invert-green {% endif %}">
-                                            <h3 class="banner__subtitle light">{{ block.settings.subtitle }}</h3>
-                                            <h2 class="banner__title natusan-h1">{{ block.settings.title }}</h2>
-                                            <div class="banner__description {% if block.settings.invert %} text-invert-white {% endif %}">{{ block.settings.description }}</div>
-                                            <a href="{{ block.settings.url }}" class="button__primary {% if block.settings.invert %} text-invert-green {% endif %}">{{ block.settings.link }}</a>
-                                    </div>
+                            {% else %}
+                              <img class="banner__full {% if block.settings.image-mobile != blank %} desktop-only {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="image">
+                               {% if block.settings.image-mobile != blank %}
+                                  <img class="banner__full mobile-only" src="{{ block.settings.image-mobile | img_url: "master" }}" alt="image-mobile-natusan" >
+                               {% endif %}
+                            {% endif %}
+                              <div class="banner__text medium {% if block.settings.invert %} text-invert-green {% endif %}">
+                                <h3 class="banner__subtitle light">{{ block.settings.subtitle }}</h3>
+                                <h2 class="banner__title natusan-h1">{{ block.settings.title }}</h2>
+                                <div class="banner__description {% if block.settings.invert %} text-invert-white {% endif %}">{{ block.settings.description }}</div>
+                                <a href="{{ block.settings.url }}" class="button__primary {% if block.settings.invert %} text-invert-green {% endif %}">{{ block.settings.link }}</a>
+                              </div>
                          </div>
                          {%- when 'video' -%}
                            <div class="relative">
                               <iframe width="100%" height="100%" src="{{ block.settings.video_url }}{%- if section.settings.video-autoplay -%}?autoplay=1& {%- endif -%}{%-unless section.settings.controls-%};controls=0;{%-endunless-%}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                               </iframe>
-                                  <div class="banner__text medium {% if block.settings.invert %} text-invert-green {% endif %}">
-                                        <h3 class="banner__subtitle light">{{ block.settings.subtitle }}</h3>
-                                        <h2 class="banner__title natusan-h1">{{ block.settings.title }}</h2>
-                                        <div class="banner__description {% if block.settings.invert %} text-invert-white {% endif %}">{{ block.settings.description }}</div>
-                                        <a href="{{ block.settings.url }}" class="button__primary {% if block.settings.invert %} text-invert-green {% endif %}">{{ block.settings.link }}</a>
-                                  </div>
+                                 <div class="banner__text medium {% if block.settings.invert %} text-invert-green {% endif %}">
+                                   <h3 class="banner__subtitle light">{{ block.settings.subtitle }}</h3>
+                                   <h2 class="banner__title natusan-h1">{{ block.settings.title }}</h2>
+                                   <div class="banner__description {% if block.settings.invert %} text-invert-white {% endif %}">{{ block.settings.description }}</div>
+                                   <a href="{{ block.settings.url }}" class="button__primary {% if block.settings.invert %} text-invert-green {% endif %}">{{ block.settings.link }}</a>
+                                </div>
                            </div>
                          {% else %}
                  {% endcase%}

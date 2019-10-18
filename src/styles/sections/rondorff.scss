@@ -1,4 +1,44 @@
 
+/////////////////*   pour la grid - avalanche  *///////////////
+
+$gutter : 20px;
+$gutter-small : 10px;
+
+
+.grid--landing {
+  margin-left: -$gutter;
+  .grid__cell {
+    padding-left: $gutter;
+  }
+}
+
+.grid--mosaic {
+  margin-left: -$gutter;
+  .grid__cell {
+    padding-left: $gutter;
+  }
+}
+
+@media screen and (max-width: 800px){
+
+    .grid--landing {
+      margin-left: -$gutter-small;
+      .grid__cell {
+        padding-left: $gutter-small;
+      }
+    }
+
+    .grid--mosaic {
+      margin-left: -$gutter-small;
+      .grid__cell {
+        padding-left: $gutter-small;
+      }
+    }
+
+}
+
+
+
 /////////////////*   utilities  *///////////////
 
 
@@ -21,7 +61,7 @@
    width: 100%;
 }
 
-.font-size{
+.font-size-cero{
   font-size: 0;
 }
 
@@ -82,7 +122,7 @@
      }
 
      .custom__button-secondary{
-      margin: 20px 0;
+      margin: 20px 0 35px 0;
     }
 
     .container--mobile{
@@ -91,6 +131,63 @@
     }
 
  }
+ /////////////////*   intro-slide  *///////////////
+
+ .intro__title{
+   max-width: 300px;
+   font-size: 50px;
+
+ }
+
+ .intro__text{
+    max-width: 95%;
+    margin-bottom: 30px;
+ }
+
+ .intro--container{
+   margin-bottom: 20px;
+
+           .flickity-prev-next-button {
+               width: 80px;
+               height: 80px;
+           }
+
+         .flickity-button {
+            color: white;
+            background: transparent;
+       }
+
+ }
+
+ @media #{$pocket}{
+       .intro--container{
+         margin-bottom: 5px;
+       }
+
+       .intro__title{
+         max-width: 300px;
+         font-size: 30px;
+         margin-top: 25px;
+       }
+
+       .intro__text{
+          max-width: 100%;
+          margin-bottom: 30px;
+       }
+
+      .intro--container{
+          .flickity-prev-next-button.previous {
+              left: -5px;
+            }
+
+         .flickity-prev-next-button.next {
+              right: -5px;
+          }
+      }
+  }
+
+
+
 /////////////////*   three products  *///////////////
 
 
@@ -110,10 +207,15 @@
       }
 
       }
-
-
   }
 
+ @media #{$pocket}{
+    .container--three{
+        .product__image-box{
+           margin-bottom: 5px;
+        }
+    }
+ }
  /////////////////*   one product centered  *///////////////
 
 .container-one-product{
@@ -129,7 +231,7 @@
      margin-top: 0;
   }
   .one-product__text {
-      margin-bottom: 35px;
+      margin: 30px 0;
    }
 }
 
@@ -153,11 +255,11 @@
 
    /////////////////*   mosaic grid *///////////////
 
-    .container--mosaic{
+   .container--mosaic{
       margin: 80px auto;
 
        .custom__button-secondary{
-          margin: 10px 0;
+          margin: 20px 0;
        }
         .grid{
              img{
@@ -205,6 +307,14 @@
    }
 
    @media #{$pocket}{
+       .container--mosaic{
+         margin: 50px auto;
+           .grid{
+                img{
+                  margin-bottom: 10px;
+                }
+           }
+       }
        .column-flex{
          flex-direction: row;
        }
@@ -212,3 +322,82 @@
          display: none;
        }
     }
+
+
+/////////////////*   video-2  *///////////////
+
+.container--flex{
+     display: flex;
+     justify-content: space-between;
+}
+
+.video--side{
+  flex: 1;
+  width: 50%;
+  background-color: #eae8e8;
+  position: relative;
+
+}
+
+.video--box{
+    width: 60%;
+    height: 50%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.video__content{
+   width: 100%;
+   height: 100%;
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+}
+
+.image--side{
+  flex: 1;
+  width: 50%;
+}
+
+ .button__video{
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+
+ .play__button{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: calc(50% - 70px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .play__image{
+    opacity: .8; 
+  }
+
+@media #{$pocket}{
+    .container--flex{
+      flex-direction: column;
+    }
+    .video--side{
+      width: 100%;
+      min-height: 400px;
+    }
+
+    .image--side{
+      width: 100%;
+    }
+
+}

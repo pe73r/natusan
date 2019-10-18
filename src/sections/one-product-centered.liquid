@@ -2,7 +2,7 @@
   <div class="{% if section.settings.hide-desktop %} lap-and-up--hide {% endif %}{% if section.settings.hide-mobile %} pocket--hide {% endif %}">
     <div class="container-secondary">
       <div class="container-one-product">
-         <div class="mobile-container">
+         <div class="container--mobile">
             <div class="one-product__text">{{ section.settings.text }}</div>
          </div>
          <div class="product__image-box  relative">
@@ -22,7 +22,7 @@
             </a>
          </div>
          {% if section.settings.link != blank %}
-          <div class="mobile-container">
+          <div class="container--mobile">
              <div class="custom__button-secondary">
                <a href="{{ section.settings.url }}">{{ section.settings.link }}&#8594;</a>
              </div>

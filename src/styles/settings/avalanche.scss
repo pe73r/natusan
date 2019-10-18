@@ -39,6 +39,13 @@ $gutter-xlarge:100px;
   }
 }
 
+.grid--mosaic {
+  margin-left: -$gutter;
+  .grid__cell {
+    padding-left: $gutter;
+  }
+}
+
 @media screen and (max-width: 800px){
 
     .grid--custom {
@@ -62,6 +69,13 @@ $gutter-xlarge:100px;
     }
 
     .grid--landing {
+      margin-left: -$gutter-small;
+      .grid__cell {
+        padding-left: $gutter-small;
+      }
+    }
+
+    .grid--mosaic {
       margin-left: -$gutter-small;
       .grid__cell {
         padding-left: $gutter-small;

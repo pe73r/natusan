@@ -17,6 +17,9 @@
 /*================ TOOLS ================*/
 @import url('tools/utilities.scss');
 @import url('tools/fonts.scss');
+@import url('tools/flickity.scss');
+
+
 
 /*================ COMMON ================*/
 @import url('global/normalize.scss');
@@ -30,6 +33,7 @@
 @import url('global/links-buttons.scss');
 @import url('global/forms.scss');
 @import url('global/blank-states.scss');
+
 
 /*================ MODULES ================*/
 @import url('modules/site-header.scss');
