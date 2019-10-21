@@ -20,6 +20,23 @@
    position: relative;
 }
 
+@media #{$portable-natusan}{
+  .portable--hide {
+    display: none;
+  }
+}
+
+@media #{$desk}{
+  .desk--hide{
+    display: none;
+  }
+}
+@media #{$thumb}{
+  .thumb--hide{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px) {
     .desktop-only{
       display: none !important;

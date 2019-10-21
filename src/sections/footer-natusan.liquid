@@ -1,0 +1,164 @@
+<footer id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="footer">
+     <div class="grid--footer">
+       <div class="footer__cell">
+         <div class="footer__right-side">
+              <h3 class="medium footer-newsletter-subtitle">{{ section.settings.newsletter-subtitle }}</h3>
+              <h2 class="medium footer-newsletter-title">{{ section.settings.newsletter-title }}</h2>
+              <h5 class="medium footer-newsletter-post-title">{{ section.settings.newsletter-post-title }}</h5>
+              <div class="footer__newsletter">
+                 {% form 'customer', id: formId, novalidate: 'novalidate' %}
+                    {%- if form.posted_successfully? -%}
+                                <p class="medium form-message form-message--success" tabindex="-1" data-form-status>
+                                  subscription sent successfully!
+                                </p>
+                    {%- endif -%}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                          <div class="{% if form.errors %} input-group--error {% endif %} form-footer__natusan">
+                                 <div class="natusan__newsletter-input">
+                                      <input type="email"
+                                        name="contact[email]"
+                                        id="{{ formId }}-email"
+                                        class="medium footer-input__text {% if form.errors %} input--error{% endif %}"
+                                        value="{{ form.email }}"
+                                        placeholder="YOUR MAIL"
+                                        aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                        aria-required="true"
+                                        required
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        {% if form.errors %}
+                                          aria-invalid="true"
+                                          aria-describedby="{{ formId }}-email-error"
+                                          data-form-status
+                                        {% endif %}>
+                                  </div>
+                              <div>
+                                  <span class="input-group__btn">
+                                      <button type="submit" class=" medium footer-natusan__submit" name="commit" id="Subscribe">
+                                      <span class="newsletter__submit-text--large">OK</span>
+                                      </button>
+                                  </span>
+                              </div>
+                          </div>
+                      {% if form.errors contains 'email' %}
+                          <span id="{{ formId }}-email-error" class="input-error-message">
+                              {% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+                          </span>
+                      {% endif %}
+                      <div class="confirmation__text">
+                            <p class="medium">
+                              <input  type="checkbox" id="agree"/>
+                              <label  for="agree">{{ section.settings.terms-text }}</label>
+                            </p>
+                      </div>
+                  {% endform %}
+              </div>
+         </div>
+       </div>
+       <div class="footer__cell">
+          <div class="footer__left-side">
+              <div class="footer-natusan-social social-mobile mobile-only">
+                   {% include 'social-links' %}
+              </div>
+              <img class="footer__logo" src="{{ section.settings.logo | img_url:'master' }}" alt="">
+                <ul class="medium footer__main-menu">
+                  {%- assign footer_linklist = section.settings.footer-menu -%}
+                   {%- for link in linklists[footer_linklist].links -%}
+                      <li>
+                          <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+                      </li>
+                   {%- endfor -%}
+                </ul>
+                <h4 class="medium footer__terms-title desktop-only">{{ section.settings.terms-title }}</h4>
+                <div class="mobile-separator mobile-only">
+                   <div class="mobile-separator-line"></div>
+                </div>
+                <ul class="medium footer__terms-menu">
+                  {%- assign footer_linklist-2 = section.settings.footer-terms-menu -%}
+                   {%- for link in linklists[footer_linklist-2].links -%}
+                      <li>
+                          <a href="{{ link.url }}" {% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+                      </li>
+                   {%- endfor -%}
+                </ul>
+                <div class="footer-natusan-social desktop-only">
+                     {% include 'social-links' %}
+                </div>
+                <h5 class="medium footer__copyright" >{{ section.settings.copyright}}</h5>
+          </div>
+       </div>
+    </div>
+</footer>
+<script>
+    $(document).ready(function() {
+      $('body').on('click', '[name="checkout"], [name="goto_pp"], [name="goto_gc"]', function() {
+        if ($('#agree').is(':checked')) {
+          $(this).submit();
+        }
+        else {
+          alert("You must agree with the terms and conditions of sales to check out.");
+          return false;
+        }
+      });
+    });
+</script>
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+       {
+         "type": "image_picker",
+         "id": "logo",
+         "label": "logo"
+       },
+       {
+         "type": "link_list",
+         "id": "footer-menu",
+         "label": "menu"
+       },
+       {
+         "type": "text",
+         "id": "terms-title",
+         "label": "Title"
+       },
+       {
+         "type": "link_list",
+         "id": "footer-terms-menu",
+         "label": "menu"
+       },
+       {
+         "type": "text",
+         "id": "copyright",
+         "label": "copyright"
+       },
+       {
+          "type": "header",
+          "content": "Newsletter"
+       },
+       {
+         "type": "text",
+         "id": "newsletter-subtitle",
+         "label": "subtitle",
+         "default": "DO YOU WANT TO HEAR MORE FROM US?"
+       },
+       {
+         "type": "text",
+         "id": "newsletter-title",
+         "label": "title",
+         "default": "Read the Natuletter"
+       },
+       {
+         "type": "text",
+         "id": "newsletter-post-title",
+         "label": "text",
+         "default": "Subscribe to our newsletter"
+       },
+       {
+         "type": "text",
+         "id": "terms-text",
+         "label": "terms text",
+         "default": "I confirm I am aged 16 over. By clicking, I agree to the terms of service"
+       }
+  ]
+}
+{% endschema %}

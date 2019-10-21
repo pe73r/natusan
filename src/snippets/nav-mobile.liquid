@@ -1,0 +1,10 @@
+<nav class="main-nav-mobile" >
+    <ul>
+      {% for link in linklists[section.settings.main_linklist].links %}
+          <li class=" header-forme__link"><a href="{{ link.url }}" class="heading bold header-forme__nav-link">{{ link.title }}</a></li>
+            {% for childlink in link.links %}
+          <li class=" header-forme__childlink"><a href="{{ childlink.url }}" class="heading header-forme__nav-link">{{ childlink.title }}</a></li>
+            {% endfor %}
+      {% endfor %}
+    </ul>
+</nav>

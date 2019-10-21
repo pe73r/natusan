@@ -1,0 +1,218 @@
+footer{
+      ul{
+         display: flex;
+         justify-content: flex-start;
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         flex-wrap: wrap;
+           li{
+              margin-right: 15px;
+               a{
+                  text-decoration: none;
+                  color: $natusan-green;
+               }
+           }
+      }
+}
+
+.grid--footer{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+.footer__cell{
+  flex: 1;
+  width: 50%;
+}
+
+.footer__left-side{
+    padding: 80px;
+    color: $natusan-green;
+}
+
+.footer__logo{
+   max-width: 160px;
+  margin-bottom: 10px;
+}
+
+.footer__main-menu{
+   font-size: $font-size-text;
+}
+
+.footer__terms-title{
+   font-size: $font-size-title;
+   margin-top: 30px;
+   margin-bottom: 5px;
+}
+
+.footer__terms-menu{
+   font-size: $font-size-text-mobile;
+   max-width: 300px;
+   margin: 0;
+     li{
+        margin-top: 15px;
+     }
+}
+
+.footer-natusan-social{
+  margin-top: 30px;
+     svg{
+          fill: $natusan-green;
+          width: 40px;
+          height: 40px;
+          max-width: 40px;
+          &:hover{
+            fill: $natusan-blue;
+          }
+      }
+}
+
+.footer__copyright{
+   font-size: $font-size-mini;
+}
+
+
+/////* FOOTER RIGHT SIDE */////
+
+.footer__right-side{
+  background-color: $natusan-green;
+  text-align: center;
+  padding: 80px;
+  color:$white;
+}
+
+.footer-newsletter-subtitle{
+    color: $natusan-blue;
+    font-size: $font-size-text;
+    margin: 0;
+}
+
+.footer-newsletter-title{
+  color: $white;
+  font-size:  $font-size-title-footer;
+  margin: 30px 0 0 0;
+     strong{
+         color: $natusan-blue;
+     }
+}
+.footer-newsletter__post-title{
+   font-size:  $font-size-text;
+}
+
+.footer__newsletter{
+   width: 70%;
+   margin: 0 auto;
+}
+
+.form-footer__natusan{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.natusan__newsletter-input{
+       input{
+            font-size: $font-size-text-mobile;
+            background-color: $natusan-green;
+            color: $white;
+            border: 2px solid white;
+            padding: 12px;
+            min-width: 260px;
+
+          &::placeholder{
+               color:$white;
+            }
+       }
+}
+
+.footer-natusan__submit{
+     background-color: $white;
+     color: $natusan-green;
+     padding: 12px;
+     border: 2px solid white;
+}
+
+.confirmation__text{
+    margin-top: 20px;
+    text-align: center;
+      input{
+          margin-right: 10px;
+      }
+     p{
+        font-size: $font-size-mini;
+     }
+}
+
+@media #{$pocket}{
+
+          footer{
+                ul{
+                   flex-direction: column;
+                   font-size: $font-size-text-mobile;
+                     li{
+                        margin-right: 0;
+                        margin-top: 15px;
+                     }
+                }
+          }
+        .grid--footer{
+          flex-direction: column;
+
+        }
+        .footer__cell{
+            width: 100%;
+      }
+
+        .footer__left-side{
+          padding: 0;
+          text-align: center;
+        }
+
+        .social-mobile{
+          margin-bottom: 20px;
+
+             ul{
+                flex-direction: row;
+                justify-content: center;
+                 li:not(:last-child){
+                     margin-right: 15px;
+                 }
+             }
+        }
+
+        .mobile-separator{
+           width: 10%;
+           margin: 30px auto;
+            .mobile-separator-line{
+               width: 100%;
+               height: 4px;
+               background-color: $natusan-green;
+            }
+        }
+
+        .footer__terms-menu{
+           max-width: 100%;
+        }
+
+      /* right side */
+      .footer__right-side{
+        padding: 30px;
+      }
+      .natusan__newsletter-input{
+             input{
+                  min-width: 220px;
+             }
+       }
+      .footer-newsletter-title{
+         font-size:  $font-size-title-footer-mobile;
+       }
+
+       .footer-newsletter-subtitle,
+       .footer-newsletter__post-title{
+           font-size: $font-size-text-mobile;
+       }
+
+}

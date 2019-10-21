@@ -1,0 +1,109 @@
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="natusan-reviews">
+    <div class="container--full">
+      <div class="container--secondary">
+        <div class="reviews--container">
+            <div class="reviews__header">
+                <h3 class="natusan-h3">{{ section.settings.title }}</h3>
+            </div>
+            <div class="main-carousel carousel-reviews" data-flickity='{ "contain": true, "groupCells": true , "prevNextButtons": false, "draggable": true, "wrapAround": true }'>
+                {% for block in section.blocks %} 
+                     <div class="carousel-cell carousel-cell-reviews ">
+                          <div class="reviews__box">
+                               <div class="reviews__text bold">{{ block.settings.text}}</div>
+                               <div class="reviews__flex">
+                                    <h4 class="reviews__name medium">{{ block.settings.name}}</h4>
+                                    <div class="reviews__stars">
+                                      {% for i in (1..block.settings.rating ) %}
+                                           {%- include 'star' -%}
+                                      {% endfor %}
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  {% endfor %}
+            </div>
+       </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Home reviews",
+  "settings": [
+       {
+         "type": "text",
+         "id": "title",
+         "label": "title",
+         "default": "NATUSANLOVERS"
+       },
+       {
+         "type": "text",
+         "id": "link",
+         "label": "link",
+         "default": "LEAVE A REVIEW"
+       },
+       {
+         "type": "url",
+         "id": "url",
+         "label": "url"
+       },
+       {
+         "type": "richtext",
+         "id": "text",
+         "label": "text",
+         "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>"
+       },
+       {
+         "type": "text",
+         "id": "name",
+         "label": "name",
+         "default": "Chloe & Nanok - London"
+       },
+       {
+         "type": "range",
+         "id": "rating",
+         "label" : "Rating",
+         "min": 1,
+         "max": 5,
+         "default": 4,
+         "step": 1
+       }
+  ],
+  "blocks": [
+    {
+      "type": "block_type",
+      "name": "Block Name",
+      "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "name",
+            "default": "Chloe & Nanok - London"
+          },
+          {
+            "type": "range",
+            "id": "rating",
+            "label" : "Rating",
+            "min": 1,
+            "max": 5,
+            "default": 4,
+            "step": 1
+          }
+      ]
+    }
+  ],
+
+  "presets": [
+  		{
+  			"name": "Home Reviews",
+  			"category": "Homepage"
+  		}
+  	]
+}
+{% endschema %}

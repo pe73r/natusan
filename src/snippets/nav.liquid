@@ -1,0 +1,35 @@
+<nav role="navigation" class="main-nav" >
+    <ul>
+      {% for link in linklists[section.settings.main_linklist].links %}
+        {% if link.links != blank %}
+          <li>
+            <a class="medium" href="{{ link.url }}">{{ link.title | escape }}</a>
+            <ul>
+              {% for childlink in link.links %}
+                {% if childlink.links != blank %}
+                  <li>
+                    <a class="medium"  href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                    <ul>
+                      {% for grandchildlink in childlink.links %}
+                        <li>
+                          <a class="medium"  href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li>
+                    <a class="medium" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li>
+            <a class="medium {% if link.current %} menu-active {% endif %}" href="{{ link.url }}">{{ link.title | escape }} </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+</nav>

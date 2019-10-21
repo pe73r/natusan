@@ -1,0 +1,122 @@
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.header-nav_box{
+  margin-left: 40px;
+}
+
+.main-nav{
+  font-size: $font-size-menu;
+  text-align: center;
+   ul{
+      list-style: none;
+      display: flex;
+      li:not(:last-child){
+         margin-right: 30px;
+      }
+      a{
+        text-decoration: none;
+        color: $natusan-green;
+      }
+   }
+}
+
+.menu-active{
+   font-family: 'Palanquin-Bold';
+   border-bottom: 4px solid $natusan-green;
+   padding-bottom: 18px;
+}
+
+
+.header-acount_box{
+  display: flex;
+  align-items: center;
+  .header__login{
+      margin: 0;
+      font-size: $font-size-menu;
+      color: $natusan-green;
+      margin-right: 25px;
+      text-transform: uppercase;
+    }
+
+   svg{
+      width: 25px;
+      fill: $natusan-green;
+      margin-right: 25px;
+      cursor: pointer;
+   }
+
+    .header-start-now{
+      max-width: 170px;
+      padding: 26px 30px;
+      background-color: $natusan-green;
+      color: $white;
+      text-align: center;
+        h3{
+          margin: 0;
+          font-size: $font-size-menu;
+        }
+    }
+  }
+
+  /////*  menu mobile */////
+
+  .menu__burger{
+    cursor: pointer;
+      svg{
+         width: 25px;
+         margin-left: 40px;
+         fill: $natusan-green;
+       }
+  }
+
+  .menu__cross{
+      width: 14px;
+      margin-left: 20px;
+      cursor: pointer;
+        svg{
+           fill: $natusan-green;
+           cursor: pointer;
+        }
+    }
+
+  .menu__container{
+       background-color:$white;
+       position: absolute;
+       width: 80%;
+       height: 100%;
+       z-index: 4;
+       padding-top: 60px;
+       display: none;
+       position: fixed;
+       top:0;
+
+    }
+
+    .main-nav-mobile{
+      font-size: $font-size-menu;
+       ul{
+          list-style: none;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          li{
+             margin-top: 30px;
+          }
+          a{
+            text-decoration: none;
+            color: $natusan-green;
+          }
+       }
+    }
+
+
+  @media #{$pocket}{
+
+
+  }
