@@ -5,14 +5,14 @@
              </div>
              {% for block in section.blocks %}
                    <div class="{% if block.settings.container == 'medium' %} container--medium {% else %} container--large {% endif %} services--container">
-                         <div class="grid grid--middle {% if block.settings.reverse %} grid--rev {% endif %} {% if block.settings.container == 'medium' %} grid--xl {% else %} grid--large {% endif %}">
+                         <div class="grid grid--middle grid--center {% if block.settings.reverse %} grid--rev {% endif %} {% if block.settings.container == 'medium' %} grid--xl {% else %} grid--large {% endif %}">
                                  <div class="1/2--lap-and-up grid__cell">
                                         <div class="services__image-box">
                                              {% include 'image' with img : block.settings.image, class: 'full-width' %}
                                         </div>
                                  </div>
                                  <div class="1/2--lap-and-up grid__cell">
-                                      <div class="services-box">
+                                      <div class="services-box {% if block.settings.container == 'large' %} float--right {% endif %}">
                                           <h3 class="services__number dtl">{{ block.settings.number }}</h3>
                                           <div class="services__text bold">{{ block.settings.text }}</div>
                                       </div>
@@ -20,6 +20,11 @@
                          </div>
                    </div>
              {% endfor %}
+             {% if section.settings.url != blank and section.settings.link != blank %}
+                  <div class="services__button">
+                       <a class="button__primary" href="{{ section.settings.url }}">{{ section.settings.link }}</a>
+                  </div>
+             {% endif %}
       </div>
 </section>
 

@@ -1,0 +1,72 @@
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="instagram">
+	<div class="container--instagram">
+			<div class="instagram--row">
+				<div class="instagram__follow-box relative">
+					<div class="insta__box">
+						<div class="insta__logo">{%- include 'insta' -%}</div>
+						<h2 class="bold insta__title">Follow that cat</h2>
+					</div>
+				</div>
+		     <div id="instagram" class="slider instagram__slider"></div>
+		  </div>
+	</div>
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(){
+			var feed = new Instafeed({
+ 		 		get: 'user',
+ 		 		userId: 9031404712,
+ 		 		accessToken: '9031404712.1677ed0.1d54806e6bbd4c7dbf402f53ed383763',
+ 		 		target: 'instagram',
+ 		 		resolution: 'standard_resolution',
+ 		 		template: '<div class="slick-insta"><a href="\{\{link\}\}"><img src="\{\{image\}\}" /></a></div>',
+				after: function(){
+					$('.slider').slick({
+							dots: false,
+							infinite: true,
+							speed: 500,
+							slidesToShow: 5,
+							slidesToScroll: 3,
+							responsive: [
+									    {
+									      breakpoint: 800,
+									      settings: {
+									        slidesToShow: 2,
+									        slidesToScroll: 2
+									      }
+									    }
+									  ]
+					});
+				}
+ 		 });
+ 		 feed.run();
+		});
+</script>
+
+
+{% schema %}
+{
+  "name": "Instagram",
+  "settings": [
+     {
+       "type": "text",
+       "id": "subtitle",
+       "label": "subtitle"
+     },
+     {
+       "type": "richtext",
+       "id": "text",
+       "label": "text"
+     }
+
+  ],
+  "presets": [
+  		{
+  			"name": "Instagram",
+  			"category": "Homepage"
+  		}
+  	]
+}
+{% endschema %}

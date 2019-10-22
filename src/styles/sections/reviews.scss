@@ -43,7 +43,7 @@
      }
 }
 
-.reviews__button-box{
+.reviews__button-box{ 
    padding-bottom: 60px;
    text-align: center;
 }
@@ -54,13 +54,18 @@
       }
 }
 
+.reviews__button{
+  text-align: center;
+  padding: 20px 0 50px 0;
+}
+
 @media #{$pocket}{
         .carousel-cell-reviews {
             width: 80%; /* half-width */
         }
 
         .carousel-reviews{
-        
+
         }
 }
 

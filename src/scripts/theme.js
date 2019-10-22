@@ -52,3 +52,20 @@ $(document).ready(function() {
     document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies');
   }
 });
+
+/*================ menu ================*/
+
+$(document).ready(function(){
+  $(".menu__burger").click(function(){
+    $(".menu__container").animate({width: 'toggle'});
+    $(".fadding__filter").fadeIn();
+
+  });
+});
+
+$(document).ready(function(){
+  $(".menu__cross").click(function(){
+    $(".menu__container").animate({width: 'toggle'});
+    $(".fadding__filter").fadeOut();
+  });
+});

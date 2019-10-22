@@ -11,8 +11,7 @@
    background-color: $white;
    padding: 70px;
    color: $natusan-green;
-   max-width: 400px;
-   float: right;
+   
 }
 
 .services__number{
@@ -24,6 +23,11 @@
 .services__text{
    font-size: $font-size-title;
    max-width: 300px;
+}
+
+.services__button{
+   text-align: center;
+   padding: 50px 0 80px 0;
 }
 
 
@@ -50,6 +54,9 @@
       .services__text{
          font-size: $font-size-text;
          max-width: 100%;
+      }
+      .services__button {
+        padding: 30px 0 60px 0;
       }
 
 }

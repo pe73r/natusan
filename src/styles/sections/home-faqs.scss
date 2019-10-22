@@ -1,5 +1,9 @@
 //////////////////* SECTION HOME FAQS   *///////////////
 
+  .container--faqs{
+       margin-bottom: 50px;
+  }
+
   .faqs__header{
       padding: 60px;
       text-align: center;
@@ -11,9 +15,6 @@
 
   //////////////////* accordion *///////////////
 
-  .accordion_container{
-
-  }
 
   .accordion-main{
     margin-top: 20px;
@@ -94,6 +95,9 @@
   }
 
   @media #{$pocket}{
+        .container--faqs {
+          margin-bottom: 25px;
+        }
         .faqs__header{
             padding: 30px 15px 30px 15px;
         }

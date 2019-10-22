@@ -10,6 +10,10 @@
   margin-left: 40px;
 }
 
+.site-logo{
+    margin-left: -40px;
+}
+
 .main-nav{
   font-size: $font-size-menu;
   text-align: center;
@@ -52,7 +56,7 @@
    }
 
     .header-start-now{
-      max-width: 170px;
+      width: 170px;
       padding: 26px 30px;
       background-color: $natusan-green;
       color: $white;
@@ -71,13 +75,13 @@
       svg{
          width: 25px;
          margin-left: 40px;
+         margin-top: 5px;
          fill: $natusan-green;
        }
   }
 
   .menu__cross{
       width: 14px;
-      margin-left: 20px;
       cursor: pointer;
         svg{
            fill: $natusan-green;
@@ -91,11 +95,11 @@
        width: 80%;
        height: 100%;
        z-index: 4;
-       padding-top: 60px;
+       padding: 60px 0 0 40px;
        display: none;
        position: fixed;
        top:0;
-
+      max-width: 350px;
     }
 
     .main-nav-mobile{
@@ -103,6 +107,7 @@
        ul{
           list-style: none;
           margin: 0;
+          padding: 0;
           display: flex;
           flex-direction: column;
           li{
@@ -115,8 +120,91 @@
        }
     }
 
+  .fadding__filter{
+     background-color: $natusan-green;
+     width: 100%;
+     height: 100vh;
+     opacity: .7;
+     position: absolute;
+     z-index: 3;
+     display: none;
+     position: fixed;
+     top: 0;
+ }
 
-  @media #{$pocket}{
+  .social-menu-mobile{
+     margin-top: 100px;
+       ul{
+          margin: 0;
+          display: flex;
+          text-decoration: none;
+          list-style: none;
+          padding: 0;
+          li{
+             margin-right: 10px;
+          }
+       }
 
+       svg{
+         fill: $natusan-green;
+         max-width: 35px;
+         width:35px;
+         height: 35px;
+         &:hover{
+           fill: $natusan-blue;
+         }
+      }
+  }
+
+   .menu-separator{
+       width: 25px;
+       margin: 30px 0;
+        .menu-separator-line{
+           width: 100%;
+           height: 2px;
+           background-color: $natusan-green;
+        }
+    }
+
+    .menu-mobile-logo{
+      width: 125px;
+      margin: 30px 0;
+    }
+
+    .terms-nav-mobile{
+      font-size: $font-size-menu;
+       ul{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          li:not(:first-child) {
+             margin-top: 20px;
+          }
+          li:nth-last-child(-n+2) {
+              font-size: $font-size-mini;
+            }
+          a{
+            text-decoration: none;
+            color: $natusan-green;
+          }
+       }
+     }
+
+   @media #{$thumb}{
+       .site-logo{
+           margin-left: 0;
+       }
+     }
+
+  @media #{$thumb}{
+
+    .menu__burger{
+        svg{
+           margin-left: 15px;
+
+         }
+    }
 
   }

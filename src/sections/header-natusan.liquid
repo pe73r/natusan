@@ -3,53 +3,56 @@
     .site-header__logo-image {
       max-width: {{ section.settings.logo_max_width }}px;
     }
+    @media screen and (max-width: 500px){
+      .site-header__logo-image {
+        max-width: 140px;
+      }
+    }
   {% endif %}
 </style>
-<header role="banner" data-section-id="{{ section.id }}" data-section-type="header-section">
+<header data-section-id="{{ section.id }}" data-section-type="header-section">
     <div class="header-container">
-        <div class="header-nav_box portable--hide">
-            {%- include 'nav' -%}
-        </div>
-        <div class="menu__burger desk--hide">
-            {%- include 'hamburguer' -%}
-        </div>
-        <div class="header-logo_box">
-            <a href="/" class="site-logo {% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
-                {% if section.settings.logo != blank %}
-                  {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-                    <img src="{{ section.settings.logo | img_url: 'master' }}" alt="logo-natusan">
-                {% else %}
-                  {{ shop.name }}
-                {% endif %}
-            </a>
-        </div>
-        <div class="header-acount_box">
-            <h3 class="medium header__login thumb--hide" href="/cart">{{ 'customer.login.sign_in' | t }}</h3>
-            <a href="/cart">{% include 'shopping-bag'%}</a>
-            <div class="header-start-now portable--hide">
-               <h3 class="medium">{{ section.settings.button }}</h3>
-            </div>
-        </div>
+      <div class="header-nav_box portable--hide">
+        {%- include 'nav' -%}
+      </div>
+      <div class="menu__burger desk--hide">
+        {%- include 'hamburguer' -%}
+      </div>
+      <div class="header-logo_box">
+        <a href="/" class="site-logo {% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
+            {% if section.settings.logo != blank %}
+            {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+              <img src="{{ section.settings.logo | img_url: 'master' }}" alt="logo-natusan">
+            {% else %}
+              {{ shop.name }}
+            {% endif %}
+        </a>
+      </div>
+      <div class="header-acount_box">
+        <h3 class="light header__login portable--hide" href="/cart">{{ 'customer.login.sign_in' | t }}</h3>
+          <a href="/cart">{% include 'shopping-bag'%}</a>
+          <div class="header-start-now portable--hide">
+            <h3 class="medium">{{ section.settings.button }}</h3>
+          </div>
+      </div>
     </div>
-    <div class="menu__container">
-          <div class="menu__cross">{%- include 'cross' -%}</div>
-         {%- include 'nav-mobile' -%}
+    <!-- menu mobile -->
+    <div class="fadding__filter"></div>
+    <div class="menu__container desk--hide">
+        <div class="menu__cross">{%- include 'cross' -%}</div>
+          {%- include 'nav-mobile' -%}
+        <div class="menu-separator">
+            <div class="menu-separator-line"></div>
+        </div>
+        {%- include 'nav-terms-mobile' -%}
+        <div class="social-menu-mobile">
+          {% include 'social-links' %}
+        </div>
+        <div class="menu-mobile-logo">
+          <img src="{{ section.settings.logo | img_url: 'master' }}" alt="logo-natusan">
+        </div>
     </div>
 </header>
-<script>
-    $(document).ready(function(){
-      $(".menu__burger").click(function(){
-        $(".menu__container").animate({width: 'toggle'});
-      });
-    });
-
-    $(document).ready(function(){
-      $(".menu__cross").click(function(){
-        $(".menu__container").animate({width: 'toggle'});
-      });
-    });
-
-</script>
 {% schema %}
   {
     "name": "Header",
@@ -80,6 +83,11 @@
         "id": "button",
         "label": "button",
         "default": "START NOW"
+      },
+      {
+        "type": "link_list",
+        "id": "terms_linklist",
+        "label": "Terms and conditions menu mobile"
       }
     ]
   }

@@ -1,0 +1,92 @@
+<div id="instafeed-gallery-feed" class="owl-carousel owl-theme gallery row no-gutter">
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+<script>
+  (function ($) {
+    "use strict";
+    $( document ).ready(function() {
+      var galleryFeed = new Instafeed({
+        get: "user",
+        userId: 5998958581,
+        accessToken: "5998958581.1677ed0.ec89f1442e1546a5b232bf19707b7213",
+        resolution: "standard_resolution",
+        useHttp: "true",
+        limit: 10,
+        template:
+        '<a href="\{\{link\}\}" target="_blank">'+
+        '<div class="img-featured-container">'+
+        '<div class="img-backdrop"></div>'+
+        '<div class="description-container">'+
+        // '<p class="caption">\{\{caption\}\}</p>'+
+        '<span class="likes"><i class="icon ion-heart"></i> \{\{likes\}\}</span>'+
+        '<span class="comments"><i class="icon ion-chatbubble"></i> \{\{comments\}\}</span>'+
+        '</div>'+
+        '<img src="\{\{image\}\}" class="img-responsive">'+
+        '</div>'+
+        '</a>',
+        target: "instafeed-gallery-feed",
+        after: function() {
+        // disable button if no more results to load
+        if (!this.hasNext()) {
+        btnInstafeedLoad.setAttribute('disabled', 'disabled');
+      }
+       var owl = $(".owl-carousel"),owlSlideSpeed = 300;
+      // init owl
+      $(document).ready(function(){
+        owl.owlCarousel({
+          // navContainer: '.owl-nav-custom',
+          // dotsContainer: '.owl-dots-custom',
+          margin:10,
+          loop:true,
+          margin:10,
+          nav:true,
+          responsive:{
+            0:{
+              items:1
+            },
+            200:{
+              items:2
+            },
+            400:{
+              items:3
+            },
+            768:{
+              items:5
+            }
+          }
+        });
+      });
+    }
+   });
+    galleryFeed.run();
+  });
+  })(jQuery);
+</script>
+
+{% schema %}
+{
+  "name": "Instagram 2",
+  "settings": [
+     {
+       "type": "text",
+       "id": "subtitle",
+       "label": "subtitle"
+     },
+     {
+       "type": "richtext",
+       "id": "text",
+       "label": "text"
+     }
+
+  ],
+  "presets": [
+  		{
+  			"name": "Instagram 2",
+  			"category": "Homepage"
+  		}
+  	]
+}
+{% endschema %}
