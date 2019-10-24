@@ -58,24 +58,24 @@ $gutter-small : 10px;
   width: 100%;
 }
 
-.font-size-cero{
+.zero{
   font-size: 0;
 }
 
 .container{
-   width: 85%;
-   max-width: 1100px;
-   margin: 0 auto;
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .container-secondary{
-   width: 100%;
-   max-width: 1100px;
-   margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .container-full{
-   width: 100%;
+  width: 100%;
 }
 
 .custom__button-primary{
@@ -90,45 +90,42 @@ $gutter-small : 10px;
   padding: 25px;
   opacity: 0;
   -webkit-transition: opacity .2s; /* Safari prior 6.1 */
-   transition: opacity .2s;
-     span:first-child{
-        margin-right: 10px;
-     }
-     span:last-child{
-        margin-left: 10px;
-     }
-     a{
-       color: black;
-       text-decoration: none;
-     }
+  transition: opacity .2s;
+  span:first-child{
+    margin-right: 10px;
+  }
+  span:last-child{
+    margin-left: 10px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
 }
 
- .custom__button-secondary{
+.custom__button-secondary{
   margin: 40px 0;
-     a{
-       color: black;
-       text-decoration: none;
-      }
+  a{
+    color: black;
+    text-decoration: none;}
  }
 
- @media #{$pocket}{
-     .custom__button-mobile{
-       opacity: 1;
-       padding: 15px 5px;
-       width: 80%;
-     }
-
-     .custom__button-secondary{
-       margin: 20px 0 35px 0;
-    }
-
-    .container--mobile{
-      width: 85%;
-      margin: 0 auto;
-    }
-
+@media #{$pocket}{
+  .custom__button-mobile{
+    opacity: 1;
+    padding: 15px 5px;
+    width: 80%;
+  }
+  .custom__button-secondary{
+    margin: 20px 0 35px 0;
+  }
+  .container--mobile{
+    width: 85%;
+    margin: 0 auto;
+   }
  }
- /////////////////*   title-image-slider  *///////////////
+
+ /**********  title-image-slider ***********/
 
 .title-image-slider__title {
   max-width: 300px;
@@ -153,67 +150,59 @@ $gutter-small : 10px;
 }
 
  @media #{$pocket}{
-       .intro--container{
-         margin-bottom: 5px;
-       }
-
-       .intro__title{
-         max-width: 300px;
-         font-size: 30px;
-         margin-top: 25px;
-       }
-
-       .intro__text{
-          max-width: 100%;
-          margin-bottom: 30px;
-       }
-
-      .intro--container{
-          .flickity-prev-next-button.previous {
-              left: -5px;
-            }
-
-         .flickity-prev-next-button.next {
-              right: -5px;
-          }
-      }
-  }
-
-
-
-/////////////////*   three products  *///////////////
-
-
- .product__image-box{
-     &:hover {
-       .custom__button-primary{
-         opacity: 1;
-         z-index:10;
-         cursor: pointer;
-          }
-
-       .button--mosaic{
-          opacity: 1;
-          z-index:10;
-          cursor: pointer;
-          }
-      }
-  }
-
- @media #{$pocket}{
-    .container--three{
-        .product__image-box{
-           margin-bottom: 5px;
-        }
-    }
+   .title-image-slider__title{
+     max-width: 300px;
+     font-size: 30px;
+     margin-top: 25px;
+   }
+   .title-image-slider__text{
+     max-width: 100%;
+     margin-bottom: 30px;
+   }
+   .container--title-image-slider {
+     margin-bottom: 5px;
+     .flickity-prev-next-button.previous {
+       left: -5px;
+     }
+     .flickity-prev-next-button.next {
+       right: -5px;
+     }
+   }
  }
- /////////////////*   one product centered  *///////////////
+
+
+/**********  three products ***********/
+
+.product__image-box{
+  &:hover {
+    .custom__button-primary{
+      opacity: 1;
+      z-index:10;
+      cursor: pointer;
+    }
+    .button--mosaic{
+      opacity: 1;
+      z-index:10;
+      cursor: pointer;
+    }
+  }
+}
+
+@media #{$pocket}{
+  .container--three{
+    .product__image-box{
+      margin-bottom: 5px;
+    }
+  }
+}
+
+/**********  one product centered ***********/
 
 .container-one-product{
-   margin-top: 70px;
-     .custom__button-secondary{
-        margin: 20px 0 60px 0;
-     }
+  margin-top: 70px;
+  .custom__button-secondary{
+    margin: 20px 0 60px 0;
+  }
 }
 
 .one-product__text{
@@ -222,103 +211,100 @@ $gutter-small : 10px;
 
 @media #{$pocket}{
   .container-one-product{
-     margin-top: 0;
-     .custom__button-secondary{
-        margin: 20px 0 35px 0;
+    margin-top: 0;
+    .custom__button-secondary{
+      margin: 20px 0 35px 0;
      }
   }
   .one-product__text {
-      margin: 30px 0;
-   }
+    margin: 30px 0;
+  }
 }
 
- /////////////////*   two products  *///////////////
+/**********  two products ***********/
 
+.container--background{
+  width: 100%;
+  padding: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media #{$pocket}{
   .container--background{
-     width: 100%;
-     padding: 80px;
-     background-size: cover;
-     background-repeat: no-repeat;
+    padding: 60px 0;
   }
-
-  @media #{$pocket}{
-      .container--background{
-        padding: 60px 0;
-      }
-      .two-products__left{
-        margin-bottom: 60px;
-      }
+  .two-products__left{
+    margin-bottom: 60px;
   }
+}
 
-   /////////////////*   mosaic grid *///////////////
+/**********  mosaic ***********/
 
-   .container--mosaic{
-      margin: 80px auto;
-
-       .custom__button-secondary{
-          margin: 20px 0;
-       }
-        .grid{
-             img{
-               margin-bottom: 20px;
-             }
-        }
+.container--mosaic{
+  margin: 80px auto;
+  .custom__button-secondary{
+    margin: 20px 0;
+  }
+  .grid{
+    img{
+      margin-bottom: 20px;
     }
+  }
+}
+.mosaic--buttons{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -10%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
 
-   .mosaic--buttons{
-       position: absolute;
-       bottom: 10%;
-       left: 50%;
-       width: 90%;
-       transform: translate(-50%, -10%);
-       margin: 0 auto;
-       display: flex;
-       justify-content: space-around;
-   }
+.button--mosaic{
+  max-width: 350px;
+  text-align: center;
+  background-color: $white;
+  padding: 20px 50px;
+  opacity: 0;
+  -webkit-transition: opacity .2s; /* Safari prior 6.1 */
+  transition: opacity .2s;
+  span:first-child{
+    margin-right: 10px;
+  }
+  span:last-child{
+    margin-left: 10px;
+  }
+  a{
+    color: black;
+    text-decoration: none;
+  }
+}
 
-   .button--mosaic{
-     max-width: 350px;
-     text-align: center;
-     background-color: $white;
-     padding: 20px 50px;
-     opacity: 0;
-     -webkit-transition: opacity .2s; /* Safari prior 6.1 */
-      transition: opacity .2s;
-        span:first-child{
-           margin-right: 10px;
-        }
-        span:last-child{
-           margin-left: 10px;
-        }
-        a{
-           color: black;
-           text-decoration: none;
-        }
-   }
+@media #{$portable}{
+  .button--mosaic{
+    padding: 20px 20px;
+  }
+}
 
-   @media #{$portable}{
-     .button--mosaic{
-       padding: 20px 20px;
-     }
-   }
-
-   @media #{$pocket}{
-       .container--mosaic{
-         margin: 50px auto;
-           .grid{
-                img{
-                  margin-bottom: 10px;
-                }
-           }
-       }
-       .column-flex{
-         flex-direction: row;
-       }
-       .button--mosaic{
-         display: none;
-       }
+@media #{$pocket}{
+  .container--mosaic{
+    margin: 50px auto;
+    .grid{
+      img{
+        margin-bottom: 10px;
+      }
     }
-
+  }
+  .column-flex{
+    flex-direction: row;
+  }
+  .button--mosaic{
+    display: none;
+  }
+}
 
 /////////////////*  video-2  *///////////////
 
@@ -359,45 +345,41 @@ $gutter-small : 10px;
   width: 50%;
 }
 
- .button__video{
-    width: 70px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    transform: translateY(-50%);
-  }
+.button__video{
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateY(-50%);
+}
 
- .play__button{
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    bottom: calc(50% - 70px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.play__button{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: calc(50% - 70px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .play__image{
-    opacity: .8;
-  }
+.play__image{
+  opacity: .8;
+}
 
 @media #{$pocket}{
-
-   .container--flex{
-      flex-direction: column;
+  .container--flex{
+    flex-direction: column;
+  }
+  .video__box{
+    width: 70%;
+    height: 60%;
    }
-
-   .video__box{
-      width: 70%;
-      height: 60%;
-   }
-
-  .block-video__video-side{
-    width: 100%;
+   .block-video__video-side{
+     width: 100%;
     min-height: 400px;
    }
-
    .block-video__image-side{
      width: 100%;
    }

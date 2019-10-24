@@ -1,33 +1,33 @@
 <section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="one-product">
   <div class="{% if section.settings.hide-desktop %} lap-and-up--hide {% endif %}{% if section.settings.hide-mobile %} pocket--hide {% endif %}">
     <div class="container-secondary">
-      <div class="container-one-product">
+     <div class="container-one-product">
+        <div class="container--mobile">
+          <div class="one-product__text">{{ section.settings.text }}</div>
+        </div>
+        <div class="product__image-box  relative">
+          {% assign product_item = all_products[section.settings.product] %}
+          <a href="/products/{{ section.settings.product }}">
+           <div class="{% if section.settings.image-mobile != blank %} pocket--hide  {% endif %}">
+            {% include 'image' with img : section.settings.image , class: 'full-width' %}
+            </div>
+            {% if section.settings.image-mobile != blank %}
+             {% include 'image' with img : section.settings.image-mobile , class: 'full-width lap-and-up--hide' %}
+            {% endif %}
+            <div class="custom__button-primary custom__button-mobile">
+              <a href="/products/{{ section.settings.product }}">
+               <span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span>
+              </a>
+            </div>
+          </a>
+        </div>
+        {% if section.settings.link != blank %}
          <div class="container--mobile">
-            <div class="one-product__text">{{ section.settings.text }}</div>
+           <div class="custom__button-secondary">
+             <a href="{{ section.settings.url }}">{{ section.settings.link }}&#8594;</a>
+           </div>
          </div>
-         <div class="product__image-box  relative">
-           {% assign product_item = all_products[section.settings.product] %}
-            <a href="/products/{{ section.settings.product }}">
-               <div class="{% if section.settings.image-mobile != blank %} pocket--hide  {% endif %}">
-                 {% include 'image' with img : section.settings.image , class: 'full-width' %}
-               </div>
-               {% if section.settings.image-mobile != blank %}
-                 {% include 'image' with img : section.settings.image-mobile , class: 'full-width lap-and-up--hide' %}
-               {% endif %}
-               <div class="custom__button-primary custom__button-mobile">
-                 <a href="/products/{{ section.settings.product }}">
-                   <span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span>
-                 </a>
-               </div>
-            </a>
-         </div>
-         {% if section.settings.link != blank %}
-          <div class="container--mobile">
-             <div class="custom__button-secondary">
-               <a href="{{ section.settings.url }}">{{ section.settings.link }}&#8594;</a>
-             </div>
-         </div>
-         {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
