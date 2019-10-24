@@ -1,31 +1,31 @@
-<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="intro-slide">
-  <div class="container intro--container">
-     <div class="grid grid--bottom grid--rev">
-         <div class="1/2--lap-and-up grid__cell">
-            <div class="main-carousel carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "autoPlay": {{ section.settings.autoplay }}, "prevNextButtons": {{ section.settings.display-arrows }},
+<section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="title-image-slider">
+  <div class="container container--title-image-slider">
+    <div class="grid grid--bottom grid--rev">
+      <div class="1/2--lap-and-up grid__cell">
+        <div class="main-carousel carousel" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false, "autoPlay": {{ section.settings.autoplay }}, "prevNextButtons": {{ section.settings.display-arrows }},
             "arrowShape": {
                 "x0": 10,
                 "x1": 55, "y1": 45,
                 "x2": 60, "y2": 40,
                 "x3": 20
              } }'>
-               {% for block in section.blocks %}
-                   <img class="full-width" src="{{ block.settings.image | img_url: "master" }}" alt="image">
-               {% endfor %}
-           </div>
-         </div>
-         <div class="1/2--lap-and-up grid__cell">
-             <h1 class="intro__title">{{ section.settings.title}}</h1>
-             <div class="intro__text">{{ section.settings.text }}</div>
-             <div class="product__image-box relative">
-               {% assign product_item = all_products[section.settings.product] %}
-                 {% include 'image' with img : section.settings.image , class: 'full-width' %}
-                 <div class="custom__button-primary custom__button-mobile">
-                    <a href="/products/{{ section.settings.product }}"><span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span></a>
-                 </div>
-            </div>
-         </div>
-     </div>
+         {% for block in section.blocks %}
+          <img class="full-width" src='{{ block.settings.image | img_url: "master" }}' alt="{{ block.settings.image.alt }}">
+         {% endfor %}
+        </div>
+      </div>
+      <div class="1/2--lap-and-up grid__cell">
+        <h1 class="title-image-slider__title">{{ section.settings.title}}</h1>
+        <div class="title-image-slider__text">{{ section.settings.text }}</div>
+        <div class="product__image-box relative">
+          {% assign product_item = all_products[section.settings.product] %}
+          {% include 'image' with img : section.settings.image , class: 'full-width' %}
+          <div class="custom__button-primary custom__button-mobile">
+            <a href="/products/{{ section.settings.product }}"><span>{{ product_item.title }}</span>-<span>{{ product_item.price | money_without_trailing_zeros  }}</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -33,55 +33,54 @@
 {
   "name": "Intro Carousel",
   "settings": [
-           {
-             "type": "text",
-             "id": "title",
-             "label": "title",
-             "default": "KNITWEAR COLLECTION"
-           },
-           {
-             "type": "richtext",
-             "id": "text",
-             "label": "Text"
-           },
-           {
-             "type": "product",
-             "id": "product",
-             "label": "product"
-           },
-           {
-             "type": "image_picker",
-             "id": "image",
-             "label": "Image"
-           },
-           {
-              "type": "header",
-              "content": "Carrousel options"
-           },
-           {
-             "type": "checkbox",
-             "id": "display-arrows",
-             "label": "display arrows",
-             "default": true
-           },
-           {
-             "type": "checkbox",
-             "id": "autoplay",
-             "label": "autoplay",
-             "default": false
-           }
-
+     {
+       "type": "text",
+       "id": "title",
+       "label": "title",
+       "default": "KNITWEAR COLLECTION"
+     },
+     {
+       "type": "richtext",
+       "id": "text",
+       "label": "Text"
+     },
+     {
+       "type": "product",
+       "id": "product",
+       "label": "product"
+     },
+     {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Image"
+     },
+     {
+        "type": "header",
+        "content": "Carrousel options"
+     },
+     {
+       "type": "checkbox",
+       "id": "display-arrows",
+       "label": "display arrows",
+       "default": true
+     },
+     {
+       "type": "checkbox",
+       "id": "autoplay",
+       "label": "autoplay",
+       "default": false
+     }
   ],
   "blocks": [
     {
       "type": "carousel-image",
       "name": "Carousel images",
       "settings": [
-              {
-                "type": "image_picker",
-                "id": "image",
-                "label": "image"
-              }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "image"
+        }
       ]
     }
   ]
