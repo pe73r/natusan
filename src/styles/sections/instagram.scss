@@ -5,29 +5,29 @@
 }
 .instagram__follow-box{
   flex: 1;
-  width: 15%;
+  width: 18%;
    svg{
-      width: 30px;
+      width: 25px;
       fill: $natusan-green;
    }
    h2{
-      font-size: 30px;
+      font-size: 35px;
       color: $natusan-green;
       margin: 0;
-      min-width: 120px;
+      min-width: 125px;
    }
 }
 .insta__box{
   position: absolute;
   bottom: 15%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -15%);
   overflow: hidden;
 }
 
 .instagram__slider{
   flex: 1;
-  width: 85%;
+  width: 84%;
 }
 
 .container--instagram{
@@ -47,6 +47,18 @@
     }
 }
 
+@media #{$lap}{
+  .insta__box{
+    bottom: 0;
+  }
+  .instagram__follow-box{
+     h2{
+        font-size: 30px;
+     }
+  }
+
+}
+
 @media #{$pocket}{
  .instagram__follow-box{
     width: 30%;
@@ -62,7 +74,7 @@
 
 @media #{$thumb}{
  .instagram__follow-box{
-    width: 40%;
+    width: 33%;
       svg{
          width: 20px;
       }
@@ -73,6 +85,6 @@
       }
   }
   .instagram__slider {
-    width: 60%;
+    width: 66%;
   }
 }

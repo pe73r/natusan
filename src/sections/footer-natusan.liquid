@@ -46,10 +46,9 @@
                           </span>
                       {% endif %}
                       <div class="confirmation__text">
-                            <p class="medium">
-                              <input  type="checkbox" id="agree"/>
-                              <label  for="agree">{{ section.settings.terms-text }}</label>
-                            </p>
+                          <input  type="checkbox" class="regular-checkbox" id="agree"/>
+                          <label  for="agree"></label>
+                          <p class="medium">{{ section.settings.terms-text }}<p>
                       </div>
                   {% endform %}
               </div>
@@ -90,18 +89,17 @@
     </div>
 </footer>
 <script>
-    $(document).ready(function() {
-      $('body').on('click', '[name="checkout"], [name="goto_pp"], [name="goto_gc"]', function() {
-        if ($('#agree').is(':checked')) {
-          $(this).submit();
-        }
-        else {
-          alert("You must agree with the terms and conditions of sales to check out.");
-          return false;
-        }
-      });
+$(document).ready(function() {  $('#Subscribe').on('click', function() {
+      if ($('#agree').is(':checked')) {  $(this).submit();
+      }
+      else {    alert("You must agree with the terms and conditions of sales to check out.");
+        return false;
+      }
     });
+  })
+
 </script>
+
 {% schema %}
 {
   "name": "Footer",

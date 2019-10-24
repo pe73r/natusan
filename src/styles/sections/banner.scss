@@ -37,8 +37,8 @@
     width: max-content;
     position: absolute;
     top: 50%;
-    left: 6%;
-    transform: translate(6%, -50%);
+    left: 40px;
+    transform: translate(40px, -50%);
     color: $white;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .banner__description{
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     max-width: 400px;
     line-height: 1.5;
     font-size: $font-size-text;
