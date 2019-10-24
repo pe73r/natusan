@@ -1,9 +1,11 @@
+/********** color ***********/
 
-/////////////////*   pour la grid - avalanche  *///////////////
+$white:white;
+
+/********** grid ***********/
 
 $gutter : 20px;
 $gutter-small : 10px;
-
 
 .grid--landing {
   margin-left: -$gutter;
@@ -20,27 +22,21 @@ $gutter-small : 10px;
 }
 
 @media screen and (max-width: 800px){
-
-    .grid--landing {
-      margin-left: -$gutter-small;
-      .grid__cell {
-        padding-left: $gutter-small;
-      }
+  .grid--landing {
+    margin-left: -$gutter-small;
+    .grid__cell {
+      padding-left: $gutter-small;
     }
-
-    .grid--mosaic {
-      margin-left: -$gutter-small;
-      .grid__cell {
-        padding-left: $gutter-small;
-      }
+  }
+  .grid--mosaic {
+    margin-left: -$gutter-small;
+    .grid__cell {
+      padding-left: $gutter-small;
     }
-
+  }
 }
 
-
-
-/////////////////*   utilities  *///////////////
-
+/********** utilities ***********/
 
 @media #{$pocket}{
   .pocket--hide {
@@ -53,12 +49,13 @@ $gutter-small : 10px;
     display: none;
   }
 }
+
 .relative{
-   position: relative;
+  position: relative;
 }
 
 .full-width{
-   width: 100%;
+  width: 100%;
 }
 
 .font-size-cero{
@@ -89,7 +86,7 @@ $gutter-small : 10px;
   bottom: 7%;
   left: 50%;
   transform: translate(-50%,-7%);
-  background-color: white;
+  background-color: $white;
   padding: 25px;
   opacity: 0;
   -webkit-transition: opacity .2s; /* Safari prior 6.1 */
@@ -131,33 +128,29 @@ $gutter-small : 10px;
     }
 
  }
- /////////////////*   intro-slide  *///////////////
+ /////////////////*   title-image-slider  *///////////////
 
- .intro__title{
-   max-width: 300px;
-   font-size: 50px;
+.title-image-slider__title {
+  max-width: 300px;
+  font-size: 50px;
+}
 
- }
+.title-image-slider__text {
+  max-width: 95%;
+  margin-bottom: 30px;
+}
 
- .intro__text{
-    max-width: 95%;
-    margin-bottom: 30px;
- }
-
- .intro--container{
-   margin-bottom: 20px;
-
-           .flickity-prev-next-button {
-               width: 80px;
-               height: 80px;
-           }
-
-         .flickity-button {
-            color: white;
-            background: transparent;
-       }
-
- }
+.container--title-image-slider {
+  margin-bottom: 20px;
+  .flickity-prev-next-button {
+    width: 80px;
+    height: 80px;
+  }
+  .flickity-button {
+    color: $white;
+    background: transparent;
+  }
+}
 
  @media #{$pocket}{
        .intro--container{
@@ -286,7 +279,7 @@ $gutter-small : 10px;
    .button--mosaic{
      max-width: 350px;
      text-align: center;
-     background-color: white;
+     background-color: $white;
      padding: 20px 50px;
      opacity: 0;
      -webkit-transition: opacity .2s; /* Safari prior 6.1 */
